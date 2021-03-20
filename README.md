@@ -40,7 +40,10 @@ You can define your own tasks in the hardhat.config file, you will notice a samp
 you'll need to make sure you fund this wallet with both Kovan ETH and Kovan LINK using the faucets here
 KOVAN ETH: https://faucet.kovan.network/
 KOVAN LINK: https://kovan.chain.link/
+
 `export PRIVATE_KEY=<your funded private MetaMask key>`
+
+`KOVAN_RPC_URL=https://kovan.infura.io/v3/075a748345714f0d87e806b2e180f237`
 
 ## Chainlink
 
