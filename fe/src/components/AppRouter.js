@@ -11,10 +11,10 @@ export default function AppRouter() {
                 <Route exact path='/'>
                     <Splash />
                 </Route>
-                <Route>
+                <Route path='/accounts/:id'>
                     <Account />
                 </Route>
-                <Route>
+                <Route path='/signup'>
                     <SignUp />
                 </Route>
                 <Route>
