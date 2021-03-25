@@ -51,6 +51,6 @@ KOVAN LINK: https://kovan.chain.link/
 
 `cd chainlink-hardhat-box`
 `yarn install`
-`hh depoy`
+`hh deploy`
 
 If you want to read more... https://blog.chain.link/using-chainlink-with-hardhat/
