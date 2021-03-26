@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Splash from "./Splash";
+import Home from "./Home";
 import Account from "./Account";
 import SignUp from "./SignUp";
 
@@ -9,16 +9,13 @@ export default function AppRouter() {
         <Router>
             <Switch>
                 <Route exact path='/'>
-                    <Splash />
+                    <Home />
                 </Route>
                 <Route path='/accounts/:id'>
                     <Account />
                 </Route>
                 <Route path='/signup'>
                     <SignUp />
-                </Route>
-                <Route>
-                    
                 </Route>
             </Switch>
         </Router>
