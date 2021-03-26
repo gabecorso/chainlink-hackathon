@@ -1,5 +1,5 @@
 {
-  "name": "hardhat-project",
+  "name": "iownthis",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
@@ -7,5 +7,9 @@
     "ethereum-waffle": "^3.3.0",
     "ethers": "^5.0.32",
     "hardhat": "^2.1.1"
+  },
+  "dependencies": {
+    "@fortawesome/pro-duotone-svg-icons": "^6.0.0-alpha2",
+    "babel-plugin-macros": "^3.0.1"
   }
 }
