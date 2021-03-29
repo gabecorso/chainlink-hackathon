@@ -9,6 +9,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export default function Hero({ isLoading })  {
         const history = useHistory();
+        console.log(history)
         const routeToSignUp = () => {
             history.push('/signup');
         }

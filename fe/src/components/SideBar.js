@@ -8,7 +8,7 @@ export default function SideBar({isOpen, setIsOpen}) {
     const sideBarAnimation = useSpring({
         transform: isOpen
           ? `translate3d(0,0,0) scale(1)`
-          : `translate3d(100%,-100%,0) scale(0.6)`
+          : `translate3d(6000px, -100vw,0) scale(0.6)`
       });
     const menuItems = ["Home", "Services", "Account", "Sign Up"];
     return (

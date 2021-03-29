@@ -1,3 +1,37 @@
 .sign-up
     @import '_theme.sass'
+    display: grid
+    place-items: center
+    height: 88vh
     padding-top: 12vh
+
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-around
+        height: 66vh
+        width: 84vw
+
+        h2
+            padding: 3vh
+
+            font-family: $font-headers
+            font-size: 2.4rem
+        form
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            label
+                width: 100%
+                display: flex
+                justify-content: center
+                input
+                    height: 4vh
+                    width: 84%
+                    // border-radius: 3px
+
+            button
+                padding: 2.4vmin 3.6vmin
+                cursor: pointer

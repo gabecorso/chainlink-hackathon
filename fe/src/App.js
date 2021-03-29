@@ -7,7 +7,7 @@ import SideBar from './components/SideBar';
 import NavBar from './components/NavBar'
 
 function App() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="app">
