@@ -6,7 +6,7 @@ import SignUp from "./SignUp";
 
 export default function AppRouter() {
     return (
-        <Router>
+        // <Router>
             <Switch>
                 <Route exact path='/'>
                     <Home />
@@ -14,10 +14,10 @@ export default function AppRouter() {
                 <Route path='/accounts/:id'>
                     <Account />
                 </Route>
-                <Route path='/signup'>
+                <Route path='/sign-up'>
                     <SignUp />
                 </Route>
             </Switch>
-        </Router>
+        // </Router>
     )
 };

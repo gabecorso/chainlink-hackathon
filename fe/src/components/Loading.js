@@ -1,5 +1,5 @@
 import React from 'react'
-import loading from '../assets/styles/loading.sass'
+import loading from '../styles/loading.sass'
 
 export default function Loading({isLoading}) {
     return (

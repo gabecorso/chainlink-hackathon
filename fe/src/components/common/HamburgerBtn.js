@@ -1,14 +1,14 @@
 import React, { useState} from 'react';
-import hamburger from '../../assets/styles/hamburger.sass';
+import hamburger from '../../styles/hamburger.sass';
 
-export default function HamburgerBtn({isOpen, setIsOpen}) {
+export default function HamburgerBtn({isOpen, setIsOpen, isSimple}) {
     function burgerClick(e) {
         e.preventDefault();
         setIsOpen(!isOpen);
     };
 
     return (
-        <div className="menu-btn" onClick={burgerClick}>
+        <div className={isSimple? "menu-btn black" : "menu-btn"} onClick={burgerClick}>
             <div className={isOpen? "burger-line one open" : "burger-line one"}></div>
             <div className={isOpen? "burger-line two open" : "burger-line two"}></div>
             <div className={isOpen? "burger-line three open" : "burger-line three"}></div>

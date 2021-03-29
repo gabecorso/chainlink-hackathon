@@ -1,5 +1,5 @@
 import React from 'react'
-import account from '../assets/styles/account.sass'
+import account from '../styles/account.sass'
 
 export default function Account() {
     return (

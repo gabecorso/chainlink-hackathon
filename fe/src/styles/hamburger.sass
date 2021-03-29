@@ -1,5 +1,6 @@
 
 .menu-btn  
+    @import '_theme.sass'
     display: flex
     position: fixed
     right: 3vw
@@ -16,12 +17,10 @@
 
     .burger-line 
         width: 24px
-        background: black
         height: 3px
+        background: $iot-white
         border-radius: 2px
-        transition: all .3s ease-in-out
-        box-shadow: 0 2px 5px rgba( 255, 101, 47, .2)
-    
+        transition: all .3s ease-in-out    
 
     .burger-line.one.open 
         transform: rotate(45deg) translate(8px, 8px)
@@ -35,5 +34,14 @@
     
 
     .burger-line.three.open 
-        transform: rotate(-45deg) translate(7px, -7px)
+        transform: rotate(-45deg) translate(8px, -7px)
+
+    &.black
+    .burger-line
+        background: $iot-black
+
+
+
+
+
     

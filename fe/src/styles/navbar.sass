@@ -1,0 +1,25 @@
+.nav
+    @import "_theme.sass"
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: fixed
+    z-index: 99
+    width: 100%
+    top: 0
+    height: 12vh
+    transition: all 
+
+    .title-logo
+        justify-self: stretch
+        padding: 3vh
+        margin-left: 3vw
+
+        font-family: $font-headers
+        color: $iot-white
+        font-weight: 800
+        font-size: 2.4rem
+        
+    &.black 
+        .title-logo
+            color: $iot-black
