@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from "./Home";
 import Account from "./Account";
 import SignUp from "./SignUp";
-
+import CompanyProfile from "./company/CompanyProfile";
 export default function AppRouter() {
     return (
         // <Router>
@@ -16,6 +16,9 @@ export default function AppRouter() {
                 </Route>
                 <Route path='/sign-up'>
                     <SignUp />
+                </Route>
+                <Route path='/company/:id'>
+                    <CompanyProfile />
                 </Route>
             </Switch>
         // </Router>
