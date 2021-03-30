@@ -33,6 +33,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 62.5%;
+	color: #111;
 	font: inherit;
 	vertical-align: baseline;
 }

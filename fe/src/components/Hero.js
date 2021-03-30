@@ -11,7 +11,7 @@ export default function Hero({ isLoading })  {
         const history = useHistory();
         console.log(history)
         const routeToSignUp = () => {
-            history.push('/signup');
+            history.push('/sign-up');
         }
 
         return (
