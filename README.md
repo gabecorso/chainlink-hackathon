@@ -54,3 +54,59 @@ KOVAN LINK: https://kovan.chain.link/
 `hh deploy`
 
 If you want to read more... https://blog.chain.link/using-chainlink-with-hardhat/
+
+
+
+
+
+
+## React Front End
+
+### Dependencies
+A host of development dependencies were installed:
+
+`axios` : for HTTP requests 🧾
+`bootstrap / react-bootstrap` : for prebuilt component hierarchies 📦
+`node-sass` : for increased css functionality 💄
+`uuid` : for handling keys on mapped components 🆔
+`fontawesome` : pro to provide icons 🍨
+`react-router-dom` :to handle routing and urls 🌐
+`web3` : to interact with the Ethereum block chain. 💸
+
+
+
+### Local Deployment
+
+In Bash, clone into a local repository.
+`git clone https://github.com/BuddhistWalrus/chainlink-hackathon`
+
+Switch into the `fe` folder
+`cd chainlink-hackathon/fe`
+
+Add FontAwesome Credentials and NPM Install
+
+`npm config set "@fortawesome:registry" https://npm.fontawesome.com/`
+`npm config set "//npm.fontawesome.com/:_authToken"{MY_CREDENTIALS_HERE}`
+`npm install`
+
+Run Yarn start. your browser should spin up a page at http://localhost:3000/
+`yarn start`
+
+
+### Directory information 
+
+Directory
+Several folders and subfolders were added. The hierarchy can be described as follows.
+____src : where the UI architecure resides
+| |
+| |/assets
+| | |
+| | |/images
+| | |
+| | |/styles : worth noting is the theme.sass file, an injectable partial holding our color schema and project fonts
+| |
+| |/components : home to the jsx and html
+| | |
+| | |/common : holds reusable components
+
+
