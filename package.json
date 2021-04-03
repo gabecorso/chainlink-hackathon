@@ -10,9 +10,5 @@
   },
   "scripts": {
     "heroku-postbuild": "cd fe && npm install && npm run build"
-  },
-  "dependencies": {
-    "@fortawesome/pro-duotone-svg-icons": "^6.0.0-alpha2",
-    "babel-plugin-macros": "^3.0.1"
   }
 }
