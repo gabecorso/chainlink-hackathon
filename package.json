@@ -9,8 +9,8 @@
     "hardhat": "^2.1.1"
   },
   "scripts": {
-    "heroku-postbuild": "cd fe && npm install && npm run build",
-    "start": "nodemon backend/src/server.js"
+    "heroku-postbuild": "cd fe && npm install && cd ../backend/ && npm install && npm run build",
+    "start": "node backend/src/server.js"
   },
   "engines": {
     "node": "14.x"
