@@ -1,31 +1,34 @@
 import React, { useState, useEffect } from 'react'
-import signUp from '../styles/signup.sass'
-import SignUpSchema from '../helpers/SignUpSchema'
+import signUp from '../../styles/signup.sass'
+import SignUpSchema from '../../helpers/SignUpSchema'
 import * as yup from 'yup';
 import axios from 'axios'
-import { Container } from 'react-bootstrap';
-
+import { Container, Modal } from 'react-bootstrap';
+import { useHistory, Link } from 'react-router-dom';
+import Layout from '../common/Layout';
 
 const initialFormValues={
-    firstName:'',
-    lastName: '',
+    fullName:'',
     email: '',
     password: '',
     passwordConfirmation: '',
 }
 
 const initialErrors={
-    firstName:'',
-    lastName: '',
+    fullName:'',
     email: '',
     password: '',
     passwordConfirmation: '',
 
 }
+
 export default function SignUp() {
     const [form, setForm] = useState(initialFormValues)
     const [errors, setErrors] = useState(initialErrors)
     const [buttonDisabled, setButtonDisabled] = useState(true)
+    const [hasSubmitted, setHasSubmitted] = useState(true)
+
+    const history = useHistory();
 
     useEffect(() => {
         SignUpSchema.isValid(form).then(valid => {
@@ -61,10 +64,11 @@ export default function SignUp() {
     }
   
     const handleSubmit = (e) =>{
+        console.log()
         e.preventDefault()
         const newUser ={
-            firstName: form.firstName.trim(),
-            lastName: form.lastName.trim(),
+            firstName: form.fullName.split(' ')[0],
+            lastName: form.fullName.split(' ')[-1],
             email: form.email.trim(),
             password: form.password.trim(),
         }
@@ -76,16 +80,15 @@ export default function SignUp() {
     // dispatch({ type: SIGN_UP_START })
     axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
     .then(res =>{
-    //   dispatch({ type: SIGN_UP_SUCCESS, payload: user})
-      window.localStorage.setItem('token', res.data.access_token)
-      window.localStorage.setItem('username', form.username);
-    //   push('/home')
+        setHasSubmitted(true)
+        window.localStorage.setItem('token', res.data.access_token);
+        window.localStorage.setItem('username', form.username);
+
+        const goLogin = setTimeout(()=> history.push('/log-in'), 1500);
     })
     .catch(err =>{
-      debugger
-    //   dispatch({ type: SIGN_UP_FAIL, payload: err })
-    //   if ( reqErr.includes("status code 500")){
-    //     setErrors("Sorry, that username has already been taken")
+        debugger
+  
         setForm({
           ...form,
           username: initialFormValues.username
@@ -95,24 +98,25 @@ export default function SignUp() {
   }
 
     return (
-        <section className='sign-up'>
+        <Layout showMobileFooter={false} cName='sign-up'>
+            { hasSubmitted && 
+                <Modal className="success-dialog">
+                    <Modal.Header closeButton>
+                        <Modal.Title>Congrats!</Modal.Title>
+                        <Modal.Body>
+                            <p>You've signed up, woohoo! now go ahead and log in. We'll send you a confirmation email (eventually). </p>
+                        </Modal.Body>
+                    </Modal.Header>
+                </Modal>
+            }
             <Container>
-                <h2>Create An Account</h2> 
+                <h2>Make An Account</h2> 
                 <form className='form' onSubmit={handleSubmit}>
-                    <label htmlFor="firstName" >
+                    <label htmlFor="fullName" >
+                        Full Name
                         <input 
-                            name="firstName"
-                            placeholder="First Name"
-                            type="text"
-                            onChange= { onChange }
-                            value={form.firstName}
-                            />
-                    </label>
-                    < br />
-                    <label htmlFor="lastName" >
-                        <input 
-                            name="lastName"
-                            placeholder="Last Name"
+                            name="fullName"
+                            placeholder="Ada Lovelace"
                             type="text"
                             onChange= { onChange }
                             value={form.lastName}
@@ -120,9 +124,10 @@ export default function SignUp() {
                     </label>
                     < br />
                     <label htmlFor="email" >
+                        Email
                         <input 
                             name="email"
-                            placeholder="Enter your email"
+                            placeholder="thinking.machine@gmail.com"
                             type="text"
                             onChange= { onChange }
                             value={form.email}
@@ -130,29 +135,36 @@ export default function SignUp() {
                     </label>
                     < br />
                     <label htmlFor="password" >
-                        <input 
-                            name="password"
-                            placeholder="Enter your password"
-                            type="password"
-                            onChange= { onChange }
-                            value={form.password}
-                        />
+                        Password
+                    <input 
+                        name="password"
+                        placeholder="Choose a secret phrase"
+                        type="password"
+                        onChange= { onChange }
+                        value={form.password}
+                    />
                     </label>
                     <br />
                     <label htmlFor="passwordConfirmation" >
-                        <input 
-                            name="passwordConfirmation"
-                            placeholder="Confirm password"
-                            type="password"
-                            onChange= { onChange }
-                            value={form.passwordConfirmation}
+                        Confirm password
+                    <input 
+                        name="passwordConfirmation"
+                        placeholder="Keep it safe!"
+                        type="password"
+                        onChange= { onChange }
+                        value={form.passwordConfirmation}
                         />
-                        <p>{errors.passwordConfirmation}</p>
                     </label>
                     <br />
-                    <button type="submit" disabled={buttonDisabled}>Submit</button>
+                    <div className={'form-footer d-flex justify-content-end mt-3'}>
+                        <p className={'mr-4'}>
+                            Already have an account?  <br/>
+                            <Link to="/login">Sign in.</Link>
+                        </p>
+                        <button type="submit" disabled={buttonDisabled}>Submit</button>
+                    </div>
                 </form>
             </Container>
-        </section>
+        </Layout>
     )
 }

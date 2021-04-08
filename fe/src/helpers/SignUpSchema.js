@@ -1,10 +1,8 @@
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
-    firstName: Yup
-    .string()
-    .required('Name is required'),
-    lastName: Yup
+  
+    fullName: Yup
     .string()
     .required('Name is required'),
     email: Yup
@@ -13,6 +11,7 @@ const SignupSchema = Yup.object().shape({
     .email('Please input a valid email'),
     password: Yup
     .string()
+    
     .required('Password is required'),
     passwordConfirmation: Yup.string()
     .oneOf([Yup.ref('password'), null], 'Passwords must match')

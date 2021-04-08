@@ -1,7 +1,6 @@
 import React from 'react'
-import account from '../styles/account.sass'
 
-export default function Account() {
+export default function ManageCompanies() {
     return (
         <div>
             
