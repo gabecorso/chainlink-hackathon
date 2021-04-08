@@ -1,25 +1,35 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from "./Home";
-import Account from "./Account";
-import SignUp from "./SignUp";
+import Splash from "./landing/Splash";
+import Account from "./user/Account";
+import SignUp from "./user/SignUp";
 import CompanyProfile from "./company/CompanyProfile";
+import ManageCompanies from "./company/CompanyProfile";
+import Login from "./user/Login";
+
 export default function AppRouter() {
     return (
         <Router>
             <Switch>
                 <Route exact path='/'>
-                    <Home />
+                    <Splash />
                 </Route>
                 <Route path='/accounts/:id'>
                     <Account />
                 </Route>
-                <Route path='/signup'>
+                <Route path='/sign-up'>
                     <SignUp />
+                </Route>
+                <Route path='/login'>
+                    <Login />
                 </Route>
                 <Route path='/company/:id'>
                     <CompanyProfile />
                 </Route>
+                <Route path='/manage'>
+                    <ManageCompanies />
+                </Route>
+
             </Switch>
         </Router>
     )

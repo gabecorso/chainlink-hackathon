@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function SignUp() {
+export default function ManageCompanies() {
     return (
         <div>
-            <h2>Sign Up</h2> 
+            
         </div>
     )
 }
