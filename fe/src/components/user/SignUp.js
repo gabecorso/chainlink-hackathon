@@ -78,23 +78,23 @@ export default function SignUp() {
 
   const postNewUser = user => {
     // dispatch({ type: SIGN_UP_START })
-    axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
-    .then(res =>{
-        setHasSubmitted(true)
-        window.localStorage.setItem('token', res.data.access_token);
-        window.localStorage.setItem('username', form.username);
+    // axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
+    // .then(res =>{
+    //     setHasSubmitted(true)
+    //     window.localStorage.setItem('token', res.data.access_token);
+    //     window.localStorage.setItem('username', form.username);
 
-        const goLogin = setTimeout(()=> history.push('/log-in'), 1500);
-    })
-    .catch(err =>{
-        debugger
+        const goLogin = setTimeout(()=> history.push('/login'), 1500);
+    // })
+    // .catch(err =>{
+    //     debugger
   
-        setForm({
-          ...form,
-          username: initialFormValues.username
-        })
+    //     setForm({
+    //       ...form,
+    //       username: initialFormValues.username
+    //     })
     
-    })
+    // })
   }
 
     return (

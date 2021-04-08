@@ -70,18 +70,19 @@ export default function SignUp() {
 
   const postNewUser = user => {
     // dispatch({ type: SIGN_UP_START })
-    axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
-    .then(res =>{
-        history.push('/home')
-    })
-    .catch(err =>{
-        debugger
-        setForm({
-            ...form,
-            username: initialFormValues.username
-        })
+
+    // axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
+    // .then(res =>{
+        history.push('/home');
+    // })
+    // .catch(err =>{
+    //     debugger
+    //     setForm({
+    //         ...form,
+    //         username: initialFormValues.username
+    //     })
     
-    })
+    // })
   }
 
     return (
