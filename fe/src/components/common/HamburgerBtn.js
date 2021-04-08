@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import hamburger from '../../assets/styles/hamburger.sass';
+import hamburger from '../../styles/hamburger.sass';
 
 export default function HamburgerBtn({isOpen, setIsOpen}) {
     function burgerClick(e) {
@@ -8,7 +8,7 @@ export default function HamburgerBtn({isOpen, setIsOpen}) {
     };
 
     return (
-        <div className="menu-btn" onClick={burgerClick}>
+        <div className="menu-btn mt-3" onClick={burgerClick}>
             <div className={isOpen? "burger-line one open" : "burger-line one"}></div>
             <div className={isOpen? "burger-line two open" : "burger-line two"}></div>
             <div className={isOpen? "burger-line three open" : "burger-line three"}></div>
