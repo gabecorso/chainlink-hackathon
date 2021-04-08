@@ -5,7 +5,7 @@ import { faPencilAlt, faTh, faSearch, faBell, faStar } from '@fortawesome/free-s
 
 export default function MobileFooter() {
     return (
-        <Navbar fixed={'bottom'} className="d-flex d-md-none nav mobile-footer" bg="light" expand="lg">
+        <Navbar fixed='bottom' className="d-flex d-md-none nav mobile-footer" bg="light" expand="lg">
             <Nav className="flex-row w-100">
                 <Nav.Link className="mx-auto" href="#home"><FontAwesomeIcon icon={faPencilAlt} /></Nav.Link>
                 <Nav.Link className="mx-auto" href="#companies"><FontAwesomeIcon icon={faTh} /></Nav.Link>

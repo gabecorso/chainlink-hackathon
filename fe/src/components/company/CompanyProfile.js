@@ -14,7 +14,7 @@ export default function CompanyProfile({company={name: 'CodeBerry', desc: 'We cr
     return (
         <Layout >
             <Container className={'mt-8 mb-8 company-page'}>
-                <section className={'d-flex mt-4 profile-header align-items center' }>
+                <section className={'d-flex mt-2 profile-header align-items center' }>
                     <JDenticon className={'d-flex align-items-center mr-3'} size={100} value={'213taa679dfsafbnhdusiao'} />
                     <div className={'d-flex flex-column align-items-center p-2'} style={{wordBreak: 'break-word'}}>
                         <h3 className={'pb-2'}>{name}</h3>
