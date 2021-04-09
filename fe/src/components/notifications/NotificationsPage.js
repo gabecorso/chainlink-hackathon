@@ -8,9 +8,11 @@ export default function Account() {
         <Layout mobileFooter={true}>
             <Container>
                 <h1> 
-                    This is the user Account
+                    This is the Notifications Page
                 </h1>
             </Container>
         </Layout>
     )
+}
+
 }

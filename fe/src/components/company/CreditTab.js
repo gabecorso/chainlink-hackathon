@@ -1,7 +1,7 @@
 import {Card} from "react-bootstrap";
 
 
-export default function AccountsTab() {
+export default function CreditTab() {
     return (
         <div className={'p-3'}>
             <Card className={'mt-3'} style={{backgroundColor: 'purple', maxWidth: 400}} body>

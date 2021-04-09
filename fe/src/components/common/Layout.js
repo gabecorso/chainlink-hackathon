@@ -5,7 +5,7 @@ import Navbar from "./NavBar";
 import MobileFooter from "./MobileFooter";
 
 export default function Layout(props) {
-    const {showMobileFooter = true, showNav = true, cName=''} = props;
+    const {showMobileFooter= true, showNav=true, cName=''} = props;
     return (
         <Container fluid className={`${cName} layout`}>
             {showNav && <Navbar isLoading={false} />}

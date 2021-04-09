@@ -73,7 +73,7 @@ export default function SignUp() {
 
     // axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
     // .then(res =>{
-        history.push('/home');
+        history.push('/dashboard');
     // })
     // .catch(err =>{
     //     debugger

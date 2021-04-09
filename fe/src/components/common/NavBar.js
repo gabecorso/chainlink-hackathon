@@ -11,7 +11,7 @@ export default function Nav({ isLoading }) {
 
     return (
         <Navbar 
-        className={"top-nav nav mt-1 ml-1"}  
+        className={"top-nav d-none d-md-flex mt-1 ml-1"}  
         expand="lg" 
         style={isLoading ? {display: 'none'} : {display: 'flex'}}
         >

@@ -8,7 +8,7 @@ export default function Account() {
         <Layout mobileFooter={true}>
             <Container>
                 <h1> 
-                    This is the user Account
+                    This is the dashboard
                 </h1>
             </Container>
         </Layout>
