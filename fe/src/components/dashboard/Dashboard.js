@@ -5,7 +5,7 @@ import { Container } from 'react-bootstrap'
 
 export default function Account() {
     return (
-        <Layout mobileFooter={true}>
+        <Layout>
             <Container>
                 <h1> 
                     This is the dashboard

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
 
 export default function SideBar({isOpen, setIsOpen}) {
-    const menuItems = ["Home", "Account", "About", "Sign Up"];
+    const menuItems = ["Dashboard", "Manage Companies", "Tasks", "Account", "About",];
 
     // const sideBarAnimation = useSpring({ 
     //         transform: isOpen ?  `translate3d(0,0,0) scale(1)`

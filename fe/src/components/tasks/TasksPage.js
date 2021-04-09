@@ -8,7 +8,7 @@ export default function Account() {
         <Layout mobileFooter={true}>
             <Container>
                 <h1> 
-                    This is the Notifications Page
+                    This is the Tasks Page
                 </h1>
             </Container>
         </Layout>

@@ -8,6 +8,9 @@ import SignUp from "./user/SignUp";
 import CompanyProfile from "./company/CompanyProfile";
 import ManageCompanies from "./company/CompanyProfile";
 import CreateCompanies from "./company/CreateCompany";
+import NotificationsPage from "./notifications/NotificationsPage";
+import TasksPage from "./tasks/TasksPage";
+import Dashboard from "./dashboard/Dashboard";
 
 export default function AppRouter() {
     return (
@@ -36,6 +39,15 @@ export default function AppRouter() {
                 </Route>
                 <Route path='/about'>
                     <About />
+                </Route>
+                <Route path='/tasks'>
+                    <TasksPage />
+                </Route>
+                <Route path='/notifications'>
+                    <NotificationsPage />
+                </Route>
+                <Route path='/dashboard'>
+                    <Dashboard />
                 </Route>
             </Switch>
         </Router>
