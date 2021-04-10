@@ -1,14 +1,32 @@
 .layout
-
+    @import "_theme.sass"
     .manage-companies-page
         h2
+            font-family: $font-headers
             font-size: 2.4rem
+            padding: 4vmin
+
+            background: -webkit-linear-gradient($primary-green, $primary-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
 
         .add-company-card
+            display: flex
+            flex-direction: column
+            align-items: center
             
             p
-                margin: 4vw 4vw 2vw
+                width: 100%
+                margin: 4vw 0 2vw
+                padding: 0 8vmin
 
-            .create-button
-                width: 44%
+            .create-btn
+                align-self: flex-end 
+                width: 24%
+                min-width: 180px
+                margin: 4vw
 
+                a
+                    color: $iot-white
+                    font-family: $font-secondary
+                    font-weight: 600

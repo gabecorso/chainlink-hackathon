@@ -45,7 +45,7 @@ export default function SignUp() {
        yup
        .reach(SignUpSchema, name)
        .validate(value)
-       .then(valid => {
+       .then( valid => {
            setErrors({
                ...errors,
                [name]: ''
