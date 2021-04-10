@@ -21,7 +21,8 @@ export default function Nav({ isLoading }) {
             <SideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
             <Navbar.Brand className="title-logo ">iOT</Navbar.Brand>
             <div className="nav-items">
-                <NavLink className="mx-auto" to="/explore"><FontAwesomeIcon icon={faSearch} /></NavLink>
+                <NavLink className="search-button mx-auto" to="/explore" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faSearch} /></NavLink>
+                <NavLink className="search-button mx-auto" to="/notifications" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
                 <HamburgerBtn isOpen={isOpen} setIsOpen={setIsOpen} />
             </div>
             

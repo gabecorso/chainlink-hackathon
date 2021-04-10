@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {Navbar, Nav} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPencilAlt, faTh, faSearch, faBell, faStar } from '@fortawesome/free-solid-svg-icons';
@@ -8,11 +8,11 @@ export default function MobileFooter() {
     return (
         <Navbar fixed='bottom' className="d-flex d-md-none nav mobile-footer" bg="light" expand="lg">
             <Nav className="flex-row w-100">
-                <Link className="mx-auto" to="/tasks"><FontAwesomeIcon icon={faPencilAlt} /></Link>
-                <Link className="mx-auto" to="/your-companies"><FontAwesomeIcon icon={faTh} /></Link>
-                <Link className="mx-auto" to="/dashboard"><FontAwesomeIcon icon={faStar} /></Link>
-                <Link className="mx-auto" to="/explore"><FontAwesomeIcon icon={faSearch} /></Link>
-                <Link className="mx-auto" to="/notifications"><FontAwesomeIcon icon={faBell} /></Link>
+                <NavLink className="mx-auto" to="/tasks" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faPencilAlt} /></NavLink>
+                <NavLink className="mx-auto" to="/your-companies" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faTh} /></NavLink>
+                <NavLink className="mx-auto" to="/dashboard" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faStar} /></NavLink>
+                <NavLink className="mx-auto" to="/explore" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faSearch} /></NavLink>
+                <NavLink onClick={(e) => e.preventDefault()} className="mx-auto" to="/notifications" style={{color:"#999"}} activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
             </Nav>
         </Navbar>
     )
