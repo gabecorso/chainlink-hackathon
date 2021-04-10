@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import navbar from '../../styles/navbar.sass';
+import { NavLink } from 'react-router-dom';
 
 import Navbar from 'react-bootstrap/Navbar';
-import HamburgerBtn from './HamburgerBtn';
 import SideBar from './SideBar';
+import HamburgerBtn from './HamburgerBtn';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faBell } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,8 +20,10 @@ export default function Nav({ isLoading }) {
         >
             <SideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
             <Navbar.Brand className="title-logo ">iOT</Navbar.Brand>
-            <FontAwesomeIcon />
-            <HamburgerBtn isOpen={isOpen} setIsOpen={setIsOpen} />
+            <div className="nav-items">
+                <NavLink className="mx-auto" to="/explore"><FontAwesomeIcon icon={faSearch} /></NavLink>
+                <HamburgerBtn isOpen={isOpen} setIsOpen={setIsOpen} />
+            </div>
             
         </Navbar>
 

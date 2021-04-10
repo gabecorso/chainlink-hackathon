@@ -3,9 +3,10 @@ import sidebar from '../../styles/sidebar.sass'
 import { Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
+import { FontAwesomeIcon } from 'react'
 
 export default function SideBar({isOpen, setIsOpen}) {
-    const menuItems = ["Dashboard", "Manage Companies", "Tasks", "Account", "About",];
+    const menuItems = ["Dashboard", "Your Companies", "Tasks", "Account", "About",];
 
     // const sideBarAnimation = useSpring({ 
     //         transform: isOpen ?  `translate3d(0,0,0) scale(1)`
@@ -26,9 +27,14 @@ export default function SideBar({isOpen, setIsOpen}) {
                             <li className= {"nav-item"} 
                                 onClick={() => {setIsOpen(!isOpen)}}
                             >
-                                <NavLink to={"/".concat(item.includes(" ") ? 
+                                <NavLink 
+                                    to={"/".concat(item.includes(" ") ? 
                                             item.toLowerCase().split(" ").join("-") 
-                                            : item.toLowerCase())} 
+                                            : item.toLowerCase())
+                                    } 
+                                    activeStyle={{
+                                        color: "gold"
+                                    }}
                                 >
                                     {item}
                                 </NavLink>

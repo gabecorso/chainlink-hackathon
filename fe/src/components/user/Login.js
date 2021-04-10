@@ -27,7 +27,7 @@ export default function SignUp() {
 
     useEffect(() => {
         SignUpSchema.isValid(form).then(valid => {
-          setButtonDisabled(!valid);
+          setButtonDisabled(!buttonDisabled);
         });
     }, [form]);
 
@@ -86,7 +86,7 @@ export default function SignUp() {
   }
 
     return (
-        <Layout showMobileFooter={false} cName='log-in'>
+        <Layout showMobileFooter={false} showNav={false} cName='log-in'>
             <Container>
                 <h2>Log In</h2> 
                 <form className='form' onSubmit={handleSubmit}>

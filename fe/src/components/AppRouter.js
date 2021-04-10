@@ -6,11 +6,12 @@ import About from "./landing/About";
 import Login from "./user/Login";
 import SignUp from "./user/SignUp";
 import CompanyProfile from "./company/CompanyProfile";
-import ManageCompanies from "./company/CompanyProfile";
+import ManageCompanies from "./company/ManageCompanies";
 import CreateCompanies from "./company/CreateCompany";
 import NotificationsPage from "./notifications/NotificationsPage";
 import TasksPage from "./tasks/TasksPage";
 import Dashboard from "./dashboard/Dashboard";
+import ExplorePage from "./explore/ExplorePage"
 
 export default function AppRouter() {
     return (
@@ -31,7 +32,7 @@ export default function AppRouter() {
                 <Route path='/company/:id'>
                     <CompanyProfile />
                 </Route>
-                <Route path='/manage'>
+                <Route path='/your-companies'>
                     <ManageCompanies />
                 </Route>
                 <Route path='/create'>
@@ -48,6 +49,9 @@ export default function AppRouter() {
                 </Route>
                 <Route path='/dashboard'>
                     <Dashboard />
+                </Route>
+                <Route path='/explore'>
+                    <ExplorePage />
                 </Route>
             </Switch>
         </Router>

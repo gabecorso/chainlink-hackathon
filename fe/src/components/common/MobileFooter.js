@@ -9,9 +9,9 @@ export default function MobileFooter() {
         <Navbar fixed='bottom' className="d-flex d-md-none nav mobile-footer" bg="light" expand="lg">
             <Nav className="flex-row w-100">
                 <Link className="mx-auto" to="/tasks"><FontAwesomeIcon icon={faPencilAlt} /></Link>
-                <Link className="mx-auto" to="/companies"><FontAwesomeIcon icon={faTh} /></Link>
+                <Link className="mx-auto" to="/your-companies"><FontAwesomeIcon icon={faTh} /></Link>
                 <Link className="mx-auto" to="/dashboard"><FontAwesomeIcon icon={faStar} /></Link>
-                <Link className="mx-auto" to="/search"><FontAwesomeIcon icon={faSearch} /></Link>
+                <Link className="mx-auto" to="/explore"><FontAwesomeIcon icon={faSearch} /></Link>
                 <Link className="mx-auto" to="/notifications"><FontAwesomeIcon icon={faBell} /></Link>
             </Nav>
         </Navbar>
