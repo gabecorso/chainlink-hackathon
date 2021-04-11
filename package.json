@@ -1,6 +1,6 @@
 {
   "name": "iownthis",
-  "devDependencies": {
+  "dependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "chai": "^4.3.4",
@@ -8,27 +8,11 @@
     "ethers": "^5.0.32",
     "hardhat": "^2.1.1"
   },
-  "dependencies": {
-    "babel-plugin-macros": "^3.0.1",
-    "react-spring": "^9.0.0",
-    "yup": "^0.32.9"
+  "scripts": {
+    "heroku-postbuild": "cd fe && npm install && cd ../backend/ && npm install && cd ../fe && npm run build",
+    "start": "node backend/src/server.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "engines": {
+    "node": "14.x"
   }
 }
