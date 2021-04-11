@@ -7,9 +7,7 @@ export default function NotificationsPage() {
     return (
         <Layout mobileFooter={true}>
             <Container>
-                <h1> 
-                    This is the Notifications Page
-                </h1>
+                <image src="../../assets/images/notifications.jpg"/>
             </Container>
         </Layout>
     )

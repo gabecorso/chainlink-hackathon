@@ -101,7 +101,7 @@ export default function CreateCompany() {
                                 />
                             </Form.Group>
                             <div>
-                            Company Valuation: ${Math.round(values.tokens * values.tokenPrice)}
+                            Total Valuation: ${Math.round(values.tokens * values.tokenPrice)}
                             </div>
                         </Card>
                         <Button onClick={handleShow}>
@@ -120,7 +120,7 @@ export default function CreateCompany() {
                                     <li>Owner: <strong>{}</strong></li>
                                     <li>Number of Shares: <strong>{}</strong></li>
                                     <li>Price per Share: <strong>{}</strong></li>
-                                    <li>Proposed Valuation: <strong>{}</strong></li>
+                                    <li>Proposed Valuation: <strong>{values.tokenPrice}</strong></li>
                                 </ul>
                             </Modal.Body>
                             <Modal.Footer>

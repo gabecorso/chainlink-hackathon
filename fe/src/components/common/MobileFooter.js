@@ -12,7 +12,7 @@ export default function MobileFooter() {
                 <NavLink className="mx-auto" to="/your-companies" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faTh} /></NavLink>
                 <NavLink className="mx-auto" to="/dashboard" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faStar} /></NavLink>
                 <NavLink className="mx-auto" to="/explore" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faSearch} /></NavLink>
-                <NavLink onClick={(e) => e.preventDefault()} className="mx-auto" to="/notifications" style={{color:"#999"}} activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
+                <NavLink className="mx-auto" to="/notifications" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
             </Nav>
         </Navbar>
     )
