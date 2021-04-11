@@ -12,7 +12,6 @@ export default function ManageCompanies({isManagingCompanies=false}) {
                     <Button className={'create-btn mt-4'}>
                         <Link to="/create">Add New Company</Link>
                     </Button>
-
                     <Link to="/company/charles-physical-therapy">
                         <Card className="charles-card">
                             <img src="/assets/images/charles.jpg"></img>
