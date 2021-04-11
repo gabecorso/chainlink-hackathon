@@ -2,28 +2,37 @@
     @import "_theme.sass"
     position: fixed
     display: flex
-    justify-content: space-between
     align-items: center
+    justify-content: space-between
     z-index: 99
-    width: 100vw
-    top: 0
-    height: 8vh
+    border-radius: 4px
+    width: 104vw
+    top: -2vh
+    left: -2vh
+    height: 12vh
     //     transition: all 
 
+    background-color: $iot-white
+
     .title-logo
-        justify-self: stretch
+        justify-self: flex-start
         margin-left: 3vw
+        padding: 1vh 0 0
+
         font-family: $font-headers
         color: $iot-black
         font-weight: 800
-        font-size: 2.4rem
+        font-size: 2rem
         z-index: 101
-            
-    //     &.black 
-    //         .title-logo
-    //             color: $iot-black
 
-    .side-menu
-        &.open
-            position: fixed
-            top: 0
+    .nav-items
+        width: 30vw
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-right: 4.8vw
+
+        .search-button
+
+        .menu-btn
+            margin-bottom: 

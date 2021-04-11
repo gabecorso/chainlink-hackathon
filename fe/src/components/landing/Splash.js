@@ -11,7 +11,7 @@ export default function Splash() {
     let timer = setTimeout(() => setIsLoading(false), 3000);
 
     return (
-        <Layout showMobileFooter={false} showNav={true} cName="home"> 
+        <Layout showMobileFooter={false} showNav={false} cName="home"> 
             <Loading isLoading={isLoading}/>
             <Hero isLoading={isLoading} />
         </Layout>

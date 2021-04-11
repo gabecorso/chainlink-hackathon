@@ -6,10 +6,10 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import JDenticon from "../common/JDenticon";
 import Layout from "../common/Layout";
 import DocumentsTab from "./DocumentsTab";
-import AccountsTab from "./AccountsTab";
+import AccountsTab from "./CreditTab";
 
 
-export default function CompanyProfile({company={name: 'CodeBerry', desc: 'We create artificially intelligent children', etherScan: 'https://etherscan.io/chart/etherprice'}}) {
+export default function CompanyProfile({company={name: 'Charles\' PT', desc: 'Ex-NFL Linebacker providing bespoke personal training services', etherScan: 'https://etherscan.io/chart/etherprice'}}) {
     const {name, desc, etherScan} = company;
     return (
         <Layout >

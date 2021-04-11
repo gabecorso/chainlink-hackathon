@@ -3,14 +3,12 @@ import account from '../../styles/account.sass'
 import Layout from '../common/Layout'
 import { Container } from 'react-bootstrap'
 
-export default function Account() {
+export default function Dashboard() {
     return (
         <Layout mobileFooter={true}>
-            <Container>
-                <h1> 
-                    This is the user Account
-                </h1>
-            </Container>
-        </Layout>
+        <div className="proto-bg">
+            <img className={"prototype"} src="/assets/images/dashboard.jpg"/>
+        </div>
+    </Layout>
     )
 }
