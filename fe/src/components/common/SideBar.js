@@ -2,7 +2,7 @@ import React from 'react'
 import sidebar from '../../styles/sidebar.sass'
 import { Container } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useSpring, animated } from 'react-spring';
+// import { useSpring, animated } from 'react-spring';
 import { FontAwesomeIcon } from 'react'
 
 export default function SideBar({isOpen, setIsOpen}) {
