@@ -7,6 +7,7 @@ import Login from "./user/Login";
 import SignUp from "./user/SignUp";
 import CompanyProfile from "./company/CompanyProfile";
 import ManageCompanies from "./company/ManageCompanies";
+import ManageCompaniesCharles from "./company/ManageCompaniesCharles"
 import CreateCompanyForm from "./company/CreateCompany";
 import NotificationsPage from "./notifications/NotificationsPage";
 import TasksPage from "./tasks/TasksPage";
@@ -34,6 +35,10 @@ export default function AppRouter() {
                 </Route>
                 <Route path='/your-companies'>
                     <ManageCompanies />
+                </Route>
+                {/* Get rid of this one */}
+                <Route path='/your-ccompanies/1'>
+                    <ManageCompaniesCharles />
                 </Route>
                 <Route path='/create'>
                     <CreateCompanyForm />

@@ -9,7 +9,7 @@ import DocumentsTab from "./DocumentsTab";
 import AccountsTab from "./CreditTab";
 
 
-export default function CompanyProfile({company={name: 'CodeBerry', desc: 'Coding academy for children ages 7-18', etherScan: 'https://etherscan.io/chart/etherprice'}}) {
+export default function CompanyProfile({company={name: 'Charles\' Physical Therapy', desc: 'Ex-NFL Linebacker providing bespoke personal training services', etherScan: 'https://etherscan.io/chart/etherprice'}}) {
     const {name, desc, etherScan} = company;
     return (
         <Layout >

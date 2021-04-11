@@ -5,12 +5,10 @@ import { Container } from 'react-bootstrap'
 
 export default function Dashboard() {
     return (
-        <Layout>
-            <Container>
-                <h1> 
-                    This is the dashboard
-                </h1>
-            </Container>
-        </Layout>
+        <Layout mobileFooter={true}>
+        <div className="proto-bg">
+            <img className={"prototype"} src="/assets/images/dashboard.jpg"/>
+        </div>
+    </Layout>
     )
 }

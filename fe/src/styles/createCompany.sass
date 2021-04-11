@@ -29,14 +29,41 @@
                 font-family:  $font-secondary
 
             .form-group
-
+                // display: flex
+                // flex-direction: column
+                textarea
+                    height: 48px
                 .form-control
                     font-family: $font-primary
-
                 .form-label, .form-text
+                    padding: .12vmin
+
                     font-family: $font-secondary
-                    color: $blue-light-2
+                    color: $primary-blue
                     font-size: .8rem
+                    font-weight: 600
+                .form-label
+                    color: $iot-black
+
+            .share-price-card
+                display: flex 
+                flex-direction: row
+                align-items: center
+                margin: 3vmin
+
+                .form-group
+                    display: flex
+                    flex-direction: column
+                    align-items: center                    
+                    width: 50%
+
+                    .form-control
+                        width: 50%
+
+                    div
+                        text-align: center
+
+
 
 
             

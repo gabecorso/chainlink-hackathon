@@ -6,11 +6,9 @@ import { Container } from 'react-bootstrap'
 export default function Account() {
     return (
         <Layout mobileFooter={true}>
-            <Container>
-                <h1> 
-                    This is the Tasks Page
-                </h1>
-            </Container>
+        <div className="proto-bg">
+            <img className={"prototype"} src="/assets/images/tasks.jpg"/>
+        </div>
         </Layout>
     )
 }
