@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import hamburger from '../../assets/styles/hamburger.sass';
+import hamburger from '../../styles/hamburger.sass';
 
 export default function HamburgerBtn({isOpen, setIsOpen}) {
     function burgerClick(e) {

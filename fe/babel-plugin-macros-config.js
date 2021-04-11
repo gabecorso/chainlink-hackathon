@@ -1,5 +1,5 @@
 module.exports = {
-    'fontawesome-svg-core': {
-      'license': 'pro'
-    }
+  'fontawesome-svg-core': {
+    'license': 'pro'
   }
+}
