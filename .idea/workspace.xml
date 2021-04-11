@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcd34e77-a7f6-439a-b364-e5e4cd6417ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/fe/src/components/common/JDenticon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/components/common/Layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/components/common/MobileFooter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/components/company/AccountsTab.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/components/company/CompanyProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/components/company/DocumentsTab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contracts/ConsumerAPI.sol" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/contracts/PriceFeedETH.sol" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fe/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/fe/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/src/assets/styles/_theme.sass" beforeDir="false" afterPath="$PROJECT_DIR$/fe/src/assets/styles/_theme.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/src/components/AppRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/fe/src/components/AppRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/fe/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chainlink-hardhat-box" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hardhat.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/hardhat.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +54,7 @@
       <updated>1616175555914</updated>
       <workItem from="1616175558412" duration="2913000" />
       <workItem from="1617124535458" duration="4964000" />
+      <workItem from="1618170409416" duration="1338000" />
     </task>
     <servers />
   </component>
@@ -76,5 +71,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
