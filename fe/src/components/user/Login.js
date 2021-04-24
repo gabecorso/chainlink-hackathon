@@ -86,7 +86,7 @@ export default function SignUp() {
   }
 
     return (
-        <Layout showMobileFooter={false} showNav={false} cName='log-in'>
+        <Layout cName='log-in'>
             <Container>
                 <h2>Log In</h2> 
                 <form className='form' onSubmit={handleSubmit}>

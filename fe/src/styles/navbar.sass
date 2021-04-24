@@ -1,38 +1,20 @@
-.top-nav
+.nav
     @import "_theme.sass"
-    position: fixed
     display: flex
     align-items: center
     justify-content: space-between
     z-index: 99
     border-radius: 4px
-    width: 104vw
-    top: -2vh
-    left: -2vh
-    height: 12vh
+    width: 100vw
+    height: 10vh
     //     transition: all 
 
     background-color: $iot-white
 
-    .title-logo
-        justify-self: flex-start
-        margin-left: 3vw
-        padding: 1vh 0 0
-
-        font-family: $font-headers
-        color: $iot-black
-        font-weight: 800
-        font-size: 2rem
-        z-index: 101
-
-    .nav-items
-        width: 30vw
-        display: flex
-        align-items: center
-        justify-content: space-between
-        margin-right: 4.8vw
-
-        .search-button
-
-        .menu-btn
-            margin-bottom: 
+    .navbar-nav
+        a
+            display: flex
+            align-items: center
+        h2
+            font-family: $font-headers
+            color: $iot-black

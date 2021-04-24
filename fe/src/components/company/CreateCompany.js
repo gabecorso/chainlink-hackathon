@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import createCompany from '../../styles/createCompany.sass'
 import { Formik } from 'formik';
-import * as yup from 'yup'
+import * as yup from 'yup';
 import { useHistory } from 'react-router-dom'
 import { Container, Card, Form, Button, Modal, InputGroup} from 'react-bootstrap'
 import Layout from '../common/Layout';

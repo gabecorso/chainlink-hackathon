@@ -1,33 +1,25 @@
-import React, { useState } from 'react';
-import navbar from '../../styles/navbar.sass';
-import { NavLink } from 'react-router-dom';
-
-import Navbar from 'react-bootstrap/Navbar';
-import SideBar from './SideBar';
-import HamburgerBtn from './HamburgerBtn';
+import React from 'react'
+import navbar from '../../styles/navbar.sass'
+import { NavLink, useHistory } from 'react-router-dom';
+import {Navbar, Nav} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faPencilAlt, faTh, faSearch, faBell, faStar } from '@fortawesome/free-solid-svg-icons';
 
-
-export default function Nav({ isLoading }) {
-    const [isOpen, setIsOpen] = useState(false);
-
+export default function NavBar({isMobile}) {
+    let locale = useHistory().location.pathname;
+    console.log(locale)
     return (
-        <Navbar 
-        className={"top-nav d-none d-md-flex mt-1 ml-1"}  
-        expand="lg" 
-        style={isLoading ? {display: 'none'} : {display: 'flex'}}
-        >
-            <SideBar isOpen={isOpen} setIsOpen={setIsOpen}/>
-            <Navbar.Brand className="title-logo ">iOT</Navbar.Brand>
-            <div className="nav-items">
-                <NavLink className="search-button mx-auto" to="/explore" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faSearch} /></NavLink>
-                <NavLink className="search-button mx-auto" to="/notifications" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
-                <HamburgerBtn isOpen={isOpen} setIsOpen={setIsOpen} />
-            </div>
-            
+        <Navbar fixed={isMobile? 'bottom': 'top'} className={isMobile? "d-flex nav mobile-nav" : "d-flex nav"} bg="light" expand="lg">
+            <Nav className="flex-row w-100">
+                <NavLink className="mx-auto" to="/tasks" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faPencilAlt} /></NavLink>
+                <NavLink className="mx-auto" to="/your-companies" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faTh} /></NavLink>
+                {isMobile && <NavLink className="mx-auto" to="/dashboard" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faStar} /></NavLink>}
+                {!isMobile && <NavLink className="mx-auto" to="/dashboard" activeStyle={{color:"gold"}}><h2 style={locale === "/dashboard"? {color: "gold"} : {color: "#242424"}}>IOT</h2></NavLink>}
+                <NavLink className="mx-auto" to="/explore" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faSearch} /></NavLink>
+                <NavLink className="mx-auto" to="/notifications" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
+            </Nav>
         </Navbar>
-
     )
 }
+
 
