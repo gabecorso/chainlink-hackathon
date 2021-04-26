@@ -6,13 +6,12 @@ import Navbar from "./NavBar";
 let initIsMobile = /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 export default function Layout(props) {
-    const {cName=''} = props;
+    const {cName='', displayNav=true} = props;
     const [isMobile, setIsMobile ] = useState(initIsMobile)
     return (
         <Container fluid className={`${cName} layout`}>
-            <Navbar isMobile={isMobile} />
+            {displayNav && <Navbar isMobile={isMobile} />}
             {props.children}
         </Container>
     )
-
 }
