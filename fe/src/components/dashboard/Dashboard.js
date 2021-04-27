@@ -23,13 +23,13 @@ const seedData = {
                 tokenName: "codeBerry",
                 icon: "https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/v1502910380/diilvtog7xtxak3hhia5.png",
                 ticker: "CB",
-                quantity: 200,
+                quantity: 100,
             },
         ]
     },
     prices: {
         ethereum: 2483.63,
-        codeBerry: 2
+        codeBerry: 200
     }
 }
 
@@ -57,15 +57,15 @@ export default function Dashboard() {
     return (
         <Layout cName ="dashboard">
             <section className={"mt-5 dash-overview"}>
-                <JDenticon className={"m- acct-photo"} size={100} value={'213taa679dfsafbnhdusiao'}/>
-                <h1>{dashState.user.firstName}'s Account</h1>
+                <JDenticon className={"m- acct-photo"} size={85} value={'213taa679dfsafbnhdusiao'}/>
+                <h1 className={"user-name"}>{dashState.user.firstName}'s Account</h1>
                 <h2>{walletTotal}</h2>
-                <h3>{abbrevAddress}</h3>
+                <h3 className="wallet-address">{abbrevAddress}</h3>
             </section>
             <section className="dash-tabs">
                 <Tabs defaultActiveKey="tokens" className={"mt-4"}>
                     <Tab eventKey="tokens" title="tokens">
-                        <TokensTab tokens={dashState.user.tokens} />
+                        <TokensTab tokens={dashState.user.tokens} prices={dashState.prices} />
                     </Tab>
                     <Tab eventKey="collectibles" title="collectibles">
                         <CollectiblesTab />

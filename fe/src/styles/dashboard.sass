@@ -1,4 +1,5 @@
 .dashboard
+    @import "_theme.sass"
     flex-direction: column
     align-items: center
     justify-content: flex-start
@@ -7,9 +8,21 @@
         flex-direction: column
         align-items: center
         justify-content: center
-        height: 30vh
         padding-top: 8vh
+        width: 84vw
+        .acct-photo
+            margin-bottom: 6px
+        .wallet-address
+            display: flex
+            font-size: 1.2rem
+            width: 64vw
+            line-height: 48px
+            margin: 8px 0 -16px
+            border-radius: 6px
+            background-color: $primary-green
+            justify-content: center
     .dash-tabs
+        padding: 8vh 0
         display: flex
         flex-direction: column
         align-items: center
@@ -20,3 +33,11 @@
             position: relative
             width: 100%
             max-width: 760px
+        .tab-content
+            .tokens-tab, .collect-tab
+                width: 72vw
+                display: flex
+                flex-direction: column
+                align-items: center
+                ol
+                    width: 100%
