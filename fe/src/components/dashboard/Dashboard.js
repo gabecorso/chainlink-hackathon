@@ -12,18 +12,20 @@ const seedData = {
     user: {
         firstName: "Victor",
         walletAddress: "0xc0ffee254729296a45a3885639AC7E10F9d54979",
-        tokens: {
-            ethereum: {
-                icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png",
+        tokens: [
+             {
+                tokenName: "ethereum",
                 ticker: "ETH",
+                icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Ethereum-icon-purple.svg/1200px-Ethereum-icon-purple.svg.png",
                 quantity: 1.45,
             },
-            codeBerry: {
+            {
+                tokenName: "codeBerry",
                 icon: "https://res-5.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco/v1502910380/diilvtog7xtxak3hhia5.png",
                 ticker: "CB",
-                quantity: "200",
-            }
-        }
+                quantity: 200,
+            },
+        ]
     },
     prices: {
         ethereum: 2483.63,
@@ -32,11 +34,10 @@ const seedData = {
 }
 
 export default function Dashboard() {
-    const [accountDetails, setAccountDetails] = useState(seedData.user)
-    const [prices, setPrices ] = useState(seedData.prices)
+    const [dashState, setdashState] = useState(seedData)
 
     
-    const totalWallet = (userTokens) => {
+    const totalWallet = (tokens, prices) => {
         let total = 0;
 
         const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -44,27 +45,27 @@ export default function Dashboard() {
             currency: 'USD',
           });
 
-        for (let token in userTokens) {
-            total += (userTokens[token].quantity * prices[token])
+        for (let i=0; i < tokens.length; i++) {
+            total += tokens[i]['quantity'] * prices[tokens[i]['tokenName']]
         }
         return currencyFormatter.format(total);
     }
 
-    const abbrevAddress = accountDetails.walletAddress.slice(0,6) + "..." + accountDetails.walletAddress.slice(-3);
-    let walletTotal = totalWallet(accountDetails.tokens)
+    const abbrevAddress = dashState.user.walletAddress.slice(0,6) + "..." + dashState.user.walletAddress.slice(-3);
+    let walletTotal = totalWallet(dashState.user.tokens, dashState.prices)
 
     return (
         <Layout cName ="dashboard">
             <section className={"mt-5 dash-overview"}>
                 <JDenticon className={"m- acct-photo"} size={100} value={'213taa679dfsafbnhdusiao'}/>
-                <h1>{accountDetails.firstName}'s Account</h1>
+                <h1>{dashState.user.firstName}'s Account</h1>
                 <h2>{walletTotal}</h2>
                 <h3>{abbrevAddress}</h3>
             </section>
             <section className="dash-tabs">
                 <Tabs defaultActiveKey="tokens" className={"mt-4"}>
                     <Tab eventKey="tokens" title="tokens">
-                        <TokensTab />
+                        <TokensTab tokens={dashState.user.tokens} />
                     </Tab>
                     <Tab eventKey="collectibles" title="collectibles">
                         <CollectiblesTab />

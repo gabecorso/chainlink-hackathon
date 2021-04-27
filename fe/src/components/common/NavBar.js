@@ -10,12 +10,12 @@ export default function NavBar({isMobile}) {
     return (
         <Navbar fixed={isMobile? 'bottom': 'top'} className={isMobile? "d-flex nav mobile-nav app-nav" : "d-flex app-nav"} bg="light" expand="lg">
             <Nav className="flex-row w-100">
-                {/* <NavLink className="mx-auto" to="/tasks" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faPencilAlt} /></NavLink> */}
+                <NavLink className="mx-auto" to="/tasks" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faPencilAlt} /></NavLink>
                 <NavLink className="mx-auto" to="/your-companies" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faTh} /></NavLink>
                 {isMobile && <NavLink className="mx-auto" to="/dashboard" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faStar} /></NavLink>}
                 {!isMobile && <NavLink className="mx-auto" to="/dashboard" activeStyle={{color:"gold"}}><h2 style={locale === "/dashboard"? {color: "gold"} : {color: "#242424"}}>IOT</h2></NavLink>}
                 <NavLink className="mx-auto" to="/explore" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faSearch} /></NavLink>
-                {/* <NavLink className="mx-auto" to="/notifications" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink> */}
+                <NavLink className="mx-auto" to="/notifications" activeStyle={{color:"gold"}}><FontAwesomeIcon icon={faBell} /></NavLink>
             </Nav>
         </Navbar>
     )

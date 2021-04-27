@@ -73,7 +73,7 @@ export default function CreateCompany() {
                                 ></Form.Control>
                             <Form.Text>Share 1-2 sentences about your company's DNA.</Form.Text>
                         </Form.Group>
-                        <Form.Group controlId22="">
+                        <Form.Group controlId="">
                             <Form.Label>Company Ticker</Form.Label>
                             <InputGroup hasValidation>
                                 <InputGroup.Prepend>
