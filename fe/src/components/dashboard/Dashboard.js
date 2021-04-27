@@ -59,7 +59,7 @@ export default function Dashboard() {
             <section className={"mt-5 dash-overview"}>
                 <JDenticon className={"m- acct-photo"} size={85} value={'213taa679dfsafbnhdusiao'}/>
                 <h1 className={"user-name"}>{dashState.user.firstName}'s Account</h1>
-                <h2>{walletTotal}</h2>
+                <h2 className="wallet-total">{walletTotal}</h2>
                 <h3 className="wallet-address">{abbrevAddress}</h3>
             </section>
             <section className="dash-tabs">

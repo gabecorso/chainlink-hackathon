@@ -25,35 +25,36 @@ const validationSchema = yup.object({
 })
 
 export default function CreateCompany() {         
-    const postNewCompany = company => {
-        console.log('servers? who needs em?');
-    }
-
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const handleShow = () => setModalIsOpen(true);
     const handleClose = () => setModalIsOpen(false);
-
+    
+    const history = useHistory();
+    
     const currencyFormatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
-      });
-
-    const history = useHistory();
+    });
+    
+    const postNewCompany = company => {
+        console.log('servers? who needs em?');
+    }
 
     return (
         <Layout>
             <Container className="form-container mt-1">
                 <h3>Create a Company</h3>
-            
                 <Formik 
                     validationSchema={validationSchema}
                     initialValues={initCompanyForm}
                     onSubmit={(values, actions) => {
                         this.handleSubmit(values);
                     }}
-                    render = {({
-                        values, touched, errors, dirty, isSubmitting, handleChange, handleSubmit
-                    }) => (
+                    render = {
+                        ({
+                            values, touched, errors, dirty, 
+                            isSubmitting, handleChange, handleSubmit
+                        }) => (
                     <Form className="create-company-form" onSubmit={handleSubmit}>
                         <Form.Group controlId="company-name">
                             <Form.Label>Company Name</Form.Label>
@@ -121,7 +122,7 @@ export default function CreateCompany() {
                         <Button onClick={handleShow}>
                             Continue
                         </Button>
-                        <Modal style={{display: "grid"}} show={modalIsOpen} onHide={handleClose}>
+                        <Modal className={"company-summary"} style={{display: "grid"}} show={modalIsOpen} onHide={handleClose}>
                             <Modal.Header closeButton>
                                 <Modal.Title>Review</Modal.Title>
                             </Modal.Header>
@@ -147,7 +148,7 @@ export default function CreateCompany() {
                         </Modal>
                     </ Form>
                     )}
-                    />
+                />
             </Container>
         </Layout>
     )
