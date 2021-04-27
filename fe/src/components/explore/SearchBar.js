@@ -10,7 +10,7 @@ const validationSchema = yup.object({
 
 export default function SearchBar() {
     return (
-    <div className={"search-bar m-4 p-4"}>
+    <div className={"search-bar mt-3"}>
         <Formik 
             validationSchema={validationSchema}
             initialValues={{query:""}}
@@ -31,7 +31,7 @@ export default function SearchBar() {
                         onChange={handleChange}
                         value={values.query}
                         />
-                        <Button>Search</Button>
+                        <Button type="submit">Search</Button>
                     </Form>
                     )}
                 />
