@@ -24,18 +24,6 @@ const seedData = {
             {name: 'CodeBerry', imgSrc: '', description:'Online code academy for children grades k-12',}, {name: 'Target Ace Testing', imgSrc: '', description:'An assessment facility for professional certifications',}, {name: 'The TutorDome', imgSrc: '', description:'Delivering completed homework to college students since 1997',},
         ],
     },
-    // {
-    //     title: 'Restaurants',
-    //     companies: [
-    //         {name: '', imgSrc: '', description:'',}, {name: "Joe's BBQ", imgSrc: '', description:'finger-lickin' ribs',}, {name: '', imgSrc: '', description:'',},
-    //     ],
-    // },
-    // {
-    //     title: 'Finance',
-    //     companies: [
-    //         {name: 'iOwnThis', imgSrc: '', description:'Movers and shakers in the DeFi space',}, {name: '', imgSrc: '', description:'',}, {name: '', imgSrc: '', description:'',},
-    //     ],
-    // },
     ],} 
 
 export default function ExplorePage() {
@@ -43,6 +31,7 @@ export default function ExplorePage() {
     <Layout mobileFooter={true}>
         <Container className="explore-page">
             <SearchBar />
+            
         </Container>
     </Layout>
     )
