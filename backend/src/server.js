@@ -50,11 +50,6 @@ app.all('*', asyncMiddleware(async (req, res, next) => {
     next(err);
 }));
 
-
-
-
-
-
 // error handling middleware
 app.use((err, req, res, next) => {
     err.statusCode =err.statusCode || 500;

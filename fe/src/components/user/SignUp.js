@@ -98,7 +98,7 @@ export default function SignUp() {
   }
 
     return (
-        <Layout showMobileFooter={false} showNav={false} cName='sign-up'>
+        <Layout cName='sign-up' displayNav={false}>
             { hasSubmitted && 
                 <Modal className="success-dialog">
                     <Modal.Header closeButton>

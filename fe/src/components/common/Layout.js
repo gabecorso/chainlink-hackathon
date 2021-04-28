@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import layout from "../../styles/layout.sass";
 import {Container} from "react-bootstrap";
 import Navbar from "./NavBar";
-import MobileFooter from "./MobileFooter";
+
+let initIsMobile = /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 export default function Layout(props) {
-    const {showMobileFooter= true, showNav=true, cName=''} = props;
+    const {cName='', displayNav=true} = props;
+    const [isMobile, setIsMobile ] = useState(initIsMobile)
     return (
         <Container fluid className={`${cName} layout`}>
-            {showNav && <Navbar isLoading={false} />}
+            {displayNav && <Navbar isMobile={isMobile} />}
             {props.children}
-            {showMobileFooter && <MobileFooter />}
         </Container>
     )
-
 }

@@ -1,0 +1,43 @@
+.tasks-page
+    @import '_theme.sass'
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    height: 100vh
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 2vh 0 12vh 
+        margin-top: 8vh
+        #tasks-title
+            width: 100%
+            margin-top: 4vh
+            font-family: $font-headers
+            font-size: 3.2rem
+            text-align: left
+        section
+            width: 100%
+            padding: 2.4vh
+            .section-title
+                font-family: $font-secondary
+                font-size: 2.4rem
+                margin: 0 2.4 1.2vh
+            ol
+                align-items: flex-start
+                .task
+                    width: 72%
+                    display: flex
+                    justify-content: space-between
+                    font-family: $font-primary
+                    .task-title
+                        margin-left: 4vw
+                        font-family: $font-primary
+                    .task-due
+                        font-family: $font-primary
+                        font-style: italic
+        .task-button
+            font-family: 
+            max-width: 231px
+            max-height: 72px
+            margin: 2vmin

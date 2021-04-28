@@ -76,7 +76,7 @@ export default function SignUp() {
         history.push('/dashboard');
     // })
     // .catch(err =>{
-    //     debugger
+        //     debugger
     //     setForm({
     //         ...form,
     //         username: initialFormValues.username
@@ -86,8 +86,8 @@ export default function SignUp() {
   }
 
     return (
-        <Layout showMobileFooter={false} showNav={false} cName='log-in'>
-            <Container>
+    <Layout cName="log-in" displayNav={false}>  
+        <Container>
                 <h2>Log In</h2> 
                 <form className='form' onSubmit={handleSubmit}>
                     <label htmlFor="email" >
