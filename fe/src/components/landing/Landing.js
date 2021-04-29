@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import home from '../../styles/home.sass';
+import landing from '../../styles/landing.sass';
 
 import Hero from './Hero';
 import Loading from './Loading'

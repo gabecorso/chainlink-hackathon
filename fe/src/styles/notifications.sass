@@ -30,7 +30,7 @@
             text-align: center
         .notif-list
             width: 100%
-            .notification
+            .notification-card
                 display: flex
                 justify-content: space-between
                 align-items: center
@@ -53,3 +53,22 @@
                         font-family: $font-secondary
                         font-size: 1.2rem
                         font-style: italic
+
+@media screen and ( min-width: 1200px )
+    .notifications-page
+        .notif-container
+            #notif-title
+            .notif-list
+                .notification-card
+                    height: 24vh
+                    justify-content: space-between
+                    img
+                        max-height: 14vh
+                        margin-left: -48px
+                    div
+                        .notif-message
+                            font-weight: 600
+                        .notif-time
+                    svg
+                        height: 8vh
+                        width: 8vh

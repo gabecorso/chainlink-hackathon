@@ -9,11 +9,8 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="app">
-   
+    <div className="app"> 
       <AppRouter />
-          {/* <NavBar isOpen={isOpen} setIsOpen={setIsOpen}/>
-          <SideBar isOpen={isOpen} setIsOpen={setIsOpen} /> */}
     </div>
   );
 }

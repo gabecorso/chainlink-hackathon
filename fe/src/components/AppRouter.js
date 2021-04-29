@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Splash from "./landing/Splash";
+import Landing from "./landing/Landing";
 import Account from "./user/Account";
 import About from "./landing/About";
 import Login from "./user/Login";
@@ -19,7 +19,7 @@ export default function AppRouter() {
         <Router>
             <Switch>
                 <Route exact path='/'>
-                    <Splash />
+                    <Landing />
                 </Route>
                 <Route path='/accounts/:id'>
                     <Account />

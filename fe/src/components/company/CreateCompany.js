@@ -43,7 +43,7 @@ export default function CreateCompany() {
     return (
         <Layout>
             <Container className="form-container mt-1">
-                <h3>Create a Company</h3>
+                <h3 className="create-company-title">Create a Company</h3>
                 <Formik 
                     validationSchema={validationSchema}
                     initialValues={initCompanyForm}
@@ -61,20 +61,23 @@ export default function CreateCompany() {
                             <Form.Control 
                                 type="text"
                                 name="companyName"
+                                placeholder="International Business Machines Corporation"
                                 onChange={handleChange}
                                 value={values.companyName}
                             />
                         </Form.Group>
-                        <Form.Group controlId="company-description">
+                        <Form.Group controlId="company-bio">
                             <Form.Label>Company Description</Form.Label>
                             <Form.Control 
                                 as="textarea"
-                                name="companyDescription"
+                                name="companyBio"
+                                placeholder="Founded in 1911, we are the leading American computer manufacturer."
                                 onChange={handleChange}
+                                value={values.companyBio}
                                 ></Form.Control>
                             <Form.Text>Share 1-2 sentences about your company's DNA.</Form.Text>
                         </Form.Group>
-                        <Form.Group controlId="">
+                        <Form.Group controlId="company-ticker">
                             <Form.Label>Company Ticker</Form.Label>
                             <InputGroup hasValidation>
                                 <InputGroup.Prepend>
@@ -83,6 +86,7 @@ export default function CreateCompany() {
                             <Form.Control
                                 type="text"
                                 name="tldAddress" 
+                                placeholder="$IBM"
                                 onChange={handleChange}
                                 value={values.tldAddress}
                             />
@@ -127,14 +131,14 @@ export default function CreateCompany() {
                                 <Modal.Title>Review</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                                <h3>Company Summary</h3>
+                                <h3 id="summ-title">Company Summary</h3>
                                 <ul>
-                                    <li>Company Name: <strong>{values.companyName}</strong></li>
-                                    <li>Company Description: <strong>{values.companyBio}</strong></li>
-                                    <li>Company Ticker: <strong>{values.tldAddress}</strong></li>
-                                    <li>Number of Shares: <strong>{values.tokens}</strong></li>
-                                    <li>Price per Share: <strong>{currencyFormatter.format(values.tokenPrice)}</strong></li>
-                                    <li>Proposed Valuation: <strong>{currencyFormatter.format(values.tokenPrice * values.tokens)}</strong></li>
+                                    <li id="summ-name">Company Name: <strong>{values.companyName}</strong></li>
+                                    <li id="summ-descr">Company Description: <strong>{values.companyBio}</strong></li>
+                                    <li id="summ-ticker">Company Ticker: <strong>{values.tldAddress}</strong></li>
+                                    <li id="summ-shares">Number of Shares: <strong>{values.tokens}</strong></li>
+                                    <li id="summ-price">Price per Share: <strong>{currencyFormatter.format(values.tokenPrice)}</strong></li>
+                                    <li id="summ-val">Proposed Valuation: <strong>{currencyFormatter.format(values.tokenPrice * values.tokens)}</strong></li>
                                 </ul>
                             </Modal.Body>
                             <Modal.Footer>

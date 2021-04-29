@@ -2,8 +2,7 @@ import React, { useState }from 'react'
 import notifications from '../../styles/notifications.sass'
 import Layout from '../common/Layout'
 import Container from 'react-bootstrap/Container'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTh } from '@fortawesome/free-solid-svg-icons';
+import NotificationCard from './NotificationCard'
 
 const seedData = {
     notifications: [
@@ -49,13 +48,7 @@ export default function NotificationsPage() {
                     {
                         notifications && notifications.map( notif => {
                             return(
-                                <li className={"notification mt-1"}>
-                                    {notif.img ? <img src={notif.img} alt="ipsum"/> : <FontAwesomeIcon icon={faTh} size="lg"/>}
-                                    <div>
-                                        <p className="notif-message">{notif.message}</p>
-                                        <p className="notif-time">{notif.dateTime}</p>
-                                    </div>
-                                </li>
+                                <NotificationCard notif={notif} />
                             )
                         })
                     }
