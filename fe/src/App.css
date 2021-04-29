@@ -68,7 +68,7 @@ h2 {
 }
 
 h3 {
-	font-family: 'Roboto';
+	font-family: 'Ubuntu';
 	font-size: 48px;
 	font-style: normal;
 	font-weight: 400;
@@ -105,4 +105,19 @@ h2 {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent; */
 }
+
+.modal-dialog>.modal-content>.modal-body {
+	display: flex;
+	font-family: 'Poppins';
+	flex-direction: column;
+	font-size: 1.4rem;
 	
+}
+/* .modal-content
+	.header
+		.title
+	.body
+		#summ-title
+		ul
+			li
+	.footer */

@@ -14,7 +14,7 @@
             width: 100%
             margin-top: 4vh
             font-family: $font-headers
-            font-size: 3.2rem
+            font-size: 2.8rem
             text-align: left
         section
             width: 100%
@@ -26,9 +26,11 @@
             ol
                 align-items: flex-start
                 .task
-                    width: 72%
                     display: flex
                     justify-content: space-between
+                    width: 72%
+                    margin-bottom: 2.4vmin
+                    border-bottom: 1px solid $iot-black
                     font-family: $font-primary
                     .task-title
                         margin-left: 4vw
@@ -41,3 +43,59 @@
             max-width: 231px
             max-height: 72px
             margin: 2vmin
+
+@media screen and ( max-width: 480px )
+    .tasks-page
+        .container
+            #tasks-title
+                margin-left: 32px
+            section
+                .section-title
+                    font-size: 1.6rem
+                    text-align: right
+                ol
+                    .task
+                        width: 100%
+                        .task-title
+                        .task-due
+                            flex-basis: 40%
+@media screen and ( min-width: 481px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due
+@media screen and ( min-width: 768px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due
+@media screen and ( min-width: 1024px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due
+@media screen and ( min-width: 1200px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due

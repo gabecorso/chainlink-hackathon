@@ -18,12 +18,11 @@
             font-size: 2.4rem
             font-weight: 600
         .create-company-form
-            .nav-tabs
-                margin-top: 2vh
-                font-family:  $font-secondary
+            display: flex
+            flex-direction: column
+            align-items: center
             .form-group
-                // display: flex
-                // flex-direction: column
+                width: 48vw
                 textarea
                     height: 84px
                 .form-control
@@ -31,22 +30,108 @@
                 .form-label, .form-text
                     padding: .12vmin
                     font-family: $font-secondary
-                    color: $primary-blue
+                    color: $blue-dark-2                    
                     font-size: .8rem
                     font-weight: 600
-                .form-label
-                    color: $iot-black
+            .num-shares
+                display: flex
+                justify-content: space-between
+                width: 78vw
+                font-family: $font-secondary
+                color: $iot-black
+                font-weight: 600
+                font-size: 1.32rem
             .share-price-card
                 display: flex 
                 flex-direction: row
+                justify-content: center
                 align-items: center
                 margin: 3vmin
+                h3
+                    padding: 6vmin
+                    font-family: $font-primary
+                    color: $iot-black
+                    font-size: 1.8rem
+                    text-align: center
+                    span
+                        font-size: 1.4rem
+                        font-weight: 600
+                        text-decoration: underline
+            .cont-btn
+                font-family: $font-headers
+                font-size: 1.32rem
+            .modal
+                .header
+                    .title
+                .body
+                    h3
+                    ul
+                        li
+                .footer
+                
+@media screen and ( max-width: 481px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
                 .form-group
-                    display: flex
-                    flex-direction: column
-                    align-items: center                    
-                    width: 50%
+                    margin-bottom: 3.2vh
+                    width: 84vw
+                    &#share-slider
+                        width: 72vw
+                        .form-label
+                            margin-left: -24px
+                        .form-text
+                            text-align: center
                     .form-control
-                        width: 50%
-                    div
-                        text-align: center
+                    .form-label
+                .share-price-card
+                    width: 84vw
+                    .form-group
+                        .form-control
+
+                
+@media screen and ( min-width: 481px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+                .share-price-card
+                    .form-group
+                        .form-control
+@media screen and ( min-width: 768px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+                .share-price-card
+                    .form-group
+                        .form-control
+@media screen and ( min-width: 1024px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+                .share-price-card
+                    width: 48vw
+                    height: 16vw
+                    .form-group
+                        .form-control
+@media screen and ( min-width: 1200px )
+    .layout
+        .form-container
+            .form-group
+                .form-control
+                .form-label
+                .share-price-card
+                    .form-group
+                        .form-control
