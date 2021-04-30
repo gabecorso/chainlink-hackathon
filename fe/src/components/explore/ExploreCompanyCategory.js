@@ -23,6 +23,7 @@ export default function ExploreCompanyCategory({category}) {
                     })
                 }
             </Carousel>
+            <div className="divider"/>
         </Container>
     )
 }

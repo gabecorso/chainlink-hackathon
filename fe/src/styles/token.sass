@@ -1,11 +1,12 @@
 .token
+    @import "_theme.sass"
     width: 100%
     display: flex
     align-items: center
     justify-content: space-between
     margin: 2vh 0
     padding-bottom: 12px
-    border-bottom: solid black 1px
+    border-bottom: solid rgba(0,0,0, .12) 1px
     .token-icon
         min-height: 72px
         min-width: 72px
@@ -13,4 +14,6 @@
         width: 94px
         max-width: 256px
         max-height: 256px
-        margin-left: -4vw
+    h5, h6
+        font-family: $font-primary
+

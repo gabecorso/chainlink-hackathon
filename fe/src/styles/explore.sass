@@ -2,9 +2,15 @@
     @import "_theme.sass"
     display: flex
     flex-direction: column
-    padding: 12vh 0
+    padding: 10vh 0 18vh
     .search-bar
+        display: flex
+        align-items: center
         justify-content: center
+        height: 8.4vh
+        border-radius: 12px
+        box-shadow: 1px 3px 2px .2px rgba(24,24,24,.24), 
+        -1px -3px 2px .2px rgba(24,24,24,.24)
         form
             display: flex
             justify-content: space-around
@@ -17,12 +23,18 @@
             button
     .categories
         .container
+            display: flex
+            flex-direction: column
+            align-items: center
             margin-top: 3.2vh
             height: 36vh
             width: 86vw
             .carousel-title
+                width: 100%
                 font-family: $font-headers
                 font-size: 4.8vh
+                text-indent: 12vw
+                text-align: left
                 background: -webkit-linear-gradient($primary-blue, $primary-green);
                 -webkit-background-clip: text
                 -webkit-text-fill-color: transparent
@@ -35,25 +47,24 @@
                     flex-direction: column
                     justify-content: center
                     .carousel-item
+                        width: 100%
                         height: 32vh
                         display: none
                         &.active 
                             display: flex
                             flex-direction: column
-                            justify-content: center
+                            justify-content: flex-start
                             align-items: center
                             margin-right: 0
                             img
                                 border-radius: 16px
-                                // width: 64%
                                 height: 100%
                         .carousel-caption
-                            background-color: rgba(12,12,12,.68)
+                            background-color: rgba(12,12,12,.88)
+                            width: 100%
                             border-radius: 6px
-                            padding: 0 4.6vw 4.8vh
-                            width: 48%
-                            left: 25%
-                            bottom: -2vh
+                            bottom: 2.4vh
+                            left: 0
                             h4
                                 font-family: $font-primary
                                 font-size: 1.6rem
@@ -61,7 +72,6 @@
                             p
                                 font-family: $font-secondary
                                 color: $iot-white
-
                 .carousel-control-next,.carousel-control-prev
                     display: flex
                     align-items: center
@@ -72,27 +82,41 @@
                         border-radius: 16px
                         color: black
                         background-color: black
-                        
+            .divider
+                width: 100%
+                height: 1px
+                border-bottom: 1px solid rgba(0, 0, 0, .32)
 @media screen and ( max-width: 480px )
     .explore-page
         .categories
             .container
+                height: 56vh
+                margin-top: vh
                 .carousel
-                    .carousel-item
-                        &.active
-                            img
-                                display: none
-    
+                    .carousel-inner
+                        .carousel-item
+                            &.active
+                                height: 42vh
+                                img
+                                    height: 64%
+                            .carousel-caption
+                                width: 100%
+                                padding: 2.4vmin 3.2vmin 6.4vmin
+                            
 @media screen and ( min-width: 1200px )
     .explore-page
         .categories
             .container
                 height: 48vh
                 .carousel
+                    width: 72vw
                     height: 42vh
-                    .carousel-item
-                        &.active
-                            img
+                    .carousel-inner
+                        .carousel-item
+                            &.active
+                                img
+                            .carousel-caption
+                                bottom: -16px
     
 
 

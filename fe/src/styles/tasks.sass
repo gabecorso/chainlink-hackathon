@@ -16,15 +16,24 @@
             font-family: $font-headers
             font-size: 2.8rem
             text-align: left
+            text-indent: 12vw
         section
+            display: flex
+            flex-direction: column
+            align-items: center
             width: 100%
             padding: 2.4vh
             .section-title
+                width: 72%
+                margin: 0 2.4 1.2vh
                 font-family: $font-secondary
                 font-size: 2.4rem
-                margin: 0 2.4 1.2vh
+                text-align: right
             ol
-                align-items: flex-start
+                display: flex
+                flex-direction: column
+                align-items: center
+                width: 100%
                 .task
                     display: flex
                     justify-content: space-between
@@ -88,7 +97,10 @@
                 ol
                     .task
                         .task-title
+                            font-size: 1.4rem
                         .task-due
+                            font-size: 1.2rem
+                            padding-right: 32px
 @media screen and ( min-width: 1200px )
     .tasks-page
         .container
