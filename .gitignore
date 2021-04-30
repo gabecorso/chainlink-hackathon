@@ -5,3 +5,5 @@ npm-debug.log
 cache
 artifacts
 .env
+#to hide font-awesome key
+.npmrc

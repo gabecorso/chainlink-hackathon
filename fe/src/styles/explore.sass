@@ -2,15 +2,17 @@
     @import "_theme.sass"
     display: flex
     flex-direction: column
+    align-items: center
     padding: 10vh 0 18vh
     .search-bar
         display: flex
         align-items: center
         justify-content: center
         height: 8.4vh
+        background-color: $green-light-2
         border-radius: 12px
         box-shadow: 1px 3px 2px .2px rgba(24,24,24,.24), 
-        -1px -3px 2px .2px rgba(24,24,24,.24)
+        -1px -1px 2px .2px rgba(24,24,24,.24)
         form
             display: flex
             justify-content: space-around
@@ -93,6 +95,7 @@
                 height: 56vh
                 margin-top: vh
                 .carousel
+                    width: 100%
                     .carousel-inner
                         .carousel-item
                             &.active
@@ -101,22 +104,47 @@
                                     height: 64%
                             .carousel-caption
                                 width: 100%
+                                bottom: 0
                                 padding: 2.4vmin 3.2vmin 6.4vmin
                             
-@media screen and ( min-width: 1200px )
+@media screen and ( min-width: 481px )
     .explore-page
+        .search-bar
+            width: 72vw
         .categories
             .container
+                margin-top: 8vh
                 height: 48vh
                 .carousel
                     width: 72vw
                     height: 42vh
+                    margin-bottom: 4vh
+                    .carousel-inner
+                        .carousel-item
+                            height: 42vh
+                            &.active
+                                img
+                            .carousel-caption
+                                bottom: 0px
+                                width: 88%
+                                left: 6%
+
+                .divider                          
+@media screen and ( min-width: 1200px )
+    .explore-page
+        .search-bar
+        .categories
+            .container
+                .carousel
                     .carousel-inner
                         .carousel-item
                             &.active
                                 img
                             .carousel-caption
-                                bottom: -16px
-    
+                                bottom: 0px
+                                left: 20%
+                                width: 60%
+                .divider
+
 
 
