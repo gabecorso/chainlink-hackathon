@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import signUp from '../../styles/signup.sass'
 import { useHistory, Link } from 'react-router-dom'
 import * as yup from 'yup';
-import SignUpSchema from '../../helpers/SignUpSchema'
-import axios from 'axios'
-import { Container } from 'react-bootstrap';
+import { Formik } from 'formik';
+import axios from 'axios';
+import { Container, Form } from 'react-bootstrap';
 import Layout from '../common/Layout';
 
 const initialFormValues={
@@ -12,115 +12,109 @@ const initialFormValues={
     password: '',
 }
 
-const initialErrors={
-    email: '',
-    password: '',
-}
+const validationSchema = yup.object({
+    email: yup
+        .string()
+        .required('Email is required')
+        .email('Please input a valid email'),
+    password: yup
+        .string()
+        .min(8, 'Password is too short')
+        .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Password must contain at least 8 characters, including 1 letter, 1 number, and 1 special character.')
+        .required('Password is required'),
+})
 
 export default function SignUp() {
 
     const [form, setForm] = useState(initialFormValues)
-    const [errors, setErrors] = useState(initialErrors)
     const [buttonDisabled, setButtonDisabled] = useState(true)
+    const [hasSubmitted, setHasSubmitted] = useState(false)
 
     const history = useHistory();
-
-    useEffect(() => {
-        SignUpSchema.isValid(form).then(valid => {
-          setButtonDisabled(!buttonDisabled);
-        });
-    }, [form]);
-
     
-    const onChange = (e) => {
-        e.persist()
-       const name = e.target.name
-       const value = e.target.value;
+    // const onChange = (e) => {
+    //     e.persist()
+    //    const name = e.target.name
+    //    const value = e.target.value;
 
-       yup
-       .reach(SignUpSchema, name)
-       .validate(value)
-       .then(valid => {
-           setErrors({
-               ...errors,
-               [name]: ''
-           })
-       })
-       .catch(err => {
-           setErrors({
-               [name]: err.errors[0]
-           })
-       })
+    //    yup
+    //    .reach(LoginSchema, name)
+    //    .validate(value)
+    //    .then(valid => {
+    //        setErrors({
+    //            ...errors,
+    //            [name]: ''
+    //        })
+    //    })
+    //    .catch(err => {
+    //        hasSubmitted && setErrors({
+    //            [name]: err.errors[0]
+    //        })
+    //    })
 
-        setForm({
-        ...form,
-        [name] : value
-        })
-    }
-  
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const newUser ={
-            email: form.email.trim(),
-            password: form.password.trim(),
-        }
-        postNewUser(newUser)
-        setForm(initialFormValues)
-    }
+    //     setForm({
+    //     ...form,
+    //     [name] : value
+    //     })
+    // }
 
   const postNewUser = user => {
-    // dispatch({ type: SIGN_UP_START })
+        setHasSubmitted(true);
+        // history.push('/dashboard');
 
-    // axios.post('https://cors-anywhere.herokuapp.com/https://wonderlist-backend.herokuapp.com/register', user)
-    // .then(res =>{
-        history.push('/dashboard');
-    // })
-    // .catch(err =>{
-        //     debugger
-    //     setForm({
-    //         ...form,
-    //         username: initialFormValues.username
-    //     })
-    
-    // })
   }
 
     return (
     <Layout cName="log-in" displayNav={false}>  
         <Container>
-                <h2>Log In</h2> 
-                <form className='form' onSubmit={handleSubmit}>
-                    <label htmlFor="email" >
-                        Email
-                        <input 
+            <h2>Log In</h2> 
+            <Formik
+                validationSchema={validationSchema}
+                initialValues={initialFormValues}
+                onSubmit={(values, actions) => {
+                    this.handleSubmit(values)
+                }} 
+                render = {
+                    ({
+                        values, touched, errors, dirty, isValid,
+                        isSubmitting, handleChange, handleSubmit
+                    }) => (
+                <Form className='form' onSubmit={handleSubmit}>
+                    {/* {IF FAULTY CREDENTIALS ADD ERROR HANDLING} */}
+                    <Form.Group>
+                        <Form.Label htmlFor="email" >Email</Form.Label>
+                        <Form.Control 
                             name="email"
                             placeholder="you@xyz.com"
                             type="text"
-                            onChange= { onChange }
-                            value={form.email}
+                            onChange= { handleChange }
+                            value={values.email}
                             />
-                    </label>
+                    <Form.Text>{errors.email}</Form.Text>
+                    </Form.Group>
                     < br />
-                    <label htmlFor="password" >
-                        Password
-                    <input 
-                        name="password"
-                        placeholder="enter your secret phrase"
-                        type="password"
-                        onChange= { onChange }
-                        value={form.password}
-                    />
-                    </label>
+                    <Form.Group>
+                        <Form.Label htmlFor="password" >Password</Form.Label>
+                        <Form.Control
+                            name="password"
+                            placeholder="enter your secret phrase"
+                            type="password"
+                            onChange= { handleChange }
+                            value={values.password}
+                            />
+                        <Form.Text>{errors.password}</Form.Text>
+                    </Form.Group>
                     <br />
                     <div className={'form-footer d-flex justify-content-end mt-3'}>
                         <p className={'mr-4'}>
                             Or if you need,  <br/>
                             <Link to="/sign-up">make an account.</Link>
                         </p>
-                        <button type="submit" disabled={buttonDisabled}>Submit</button>
+                        <button type="submit" disabled={!isValid}>Submit</button>
                     </div>
-                </form>
-            </Container>
-        </Layout>
+                </Form>
+            )}/>
+        </Container>
+    </Layout>
     )
 }

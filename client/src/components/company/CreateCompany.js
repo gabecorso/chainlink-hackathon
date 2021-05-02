@@ -35,6 +35,7 @@ export default function CreateCompany() {
         style: 'currency',
         currency: 'USD',
     });
+    
     const numWithCommas = (int) => {
         return int.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
