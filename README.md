@@ -81,8 +81,8 @@ A host of development dependencies were installed:
 In Bash, clone into a local repository.
 `git clone https://github.com/BuddhistWalrus/chainlink-hackathon`
 
-Switch into the `fe` folder
-`cd chainlink-hackathon/fe`
+Switch into the `client` folder
+`cd chainlink-hackathon/client`
 
 Add FontAwesome Credentials and NPM Install
 

@@ -1,0 +1,94 @@
+.notifications-page
+    @import '_theme.sass'
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    height: 100vh
+    background-color: rgba(20,10,181, .84)
+    // border: 12px solid white
+    margin-right: 0
+    margin-left: 0
+    padding-right: 0
+    padding-left: 0
+    .notif-container
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        align-items: center
+        width: 100%
+        padding: 0 0 12vh 
+        margin: 12vh 4vh
+        #notif-title
+            width: 100%
+            margin: 0 4vw 0
+            background-color: $iot-black
+            font-family: $font-headers
+            color: $iot-white
+            font-size: 3.2rem
+            line-height: 4.8rem
+            text-align: center
+        .notif-list
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            .notification-card
+                display: flex
+                justify-content: space-between
+                align-items: center
+                background-color: $iot-white
+                border-radius: 3px
+                padding: 0 12vw
+                height: 8vh
+                width: 72vw
+                img
+                    height: auto
+                    max-height: 4.8vh
+                    margin-left: -12px
+                div
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    text-align: center
+                    .notif-message
+                        font-family: $font-primary
+                        font-size: 1.4rem
+                    .notif-time
+                        font-family: $font-secondary
+                        font-size: 1.2rem
+                        font-style: italic
+
+@media screen and ( max-width: 480px )
+    .notifications-page
+        .notif-container
+            #notif-title
+            .notif-list
+                .notification-card
+                    width: 92vw
+                    height: 18vh
+                    img
+                    div
+                        width: 78%
+                        .notif-message
+                        .notif-time
+                    svg
+
+@media screen and ( min-width: 1200px )
+    .notifications-page
+        .notif-container
+            #notif-title
+            .notif-list
+                .notification-card
+                    height: 24vh
+                    justify-content: space-between
+                    img
+                        max-height: 14vh
+                        margin-left: -48px
+                    div
+                        .notif-message
+                            font-weight: 600
+                        .notif-time
+                    svg
+                        height: 8vh
+                        width: 8vh

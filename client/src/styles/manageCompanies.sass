@@ -1,0 +1,51 @@
+.layout
+    @import "_theme.sass"
+    .manage-companies-page
+        padding: 12vh 0
+        h2
+            font-family: $font-headers
+            font-size: 2.8rem
+            padding: 4vmin
+
+            background: -webkit-linear-gradient($primary-green, $primary-blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        .add-company-card
+            display: flex
+            flex-direction: column
+            align-items: center
+            
+            p
+                width: 100%
+                margin: 4vw 0 2vw
+                padding: 0 8vmin
+                font-family: $font-primary
+
+            .create-btn
+                align-self: flex-end 
+                width: 24%
+                min-width: 180px
+                margin: 4vw
+
+                a
+                    color: $iot-white
+                    font-family: $font-secondary
+                    font-weight: 600
+
+
+    .charles-card
+        margin: 4vmin 0
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        
+        img
+            object-fit: cover
+            max-width: 240px
+
+        h4
+            font-family: $font-primary
+            font-weight: 600
+            font-color: $iot-black

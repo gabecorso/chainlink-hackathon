@@ -1,0 +1,140 @@
+.layout
+    @import "_theme.sass"
+
+    .form-container
+        width: 72vw
+        display: flex
+        padding-top: vh
+        flex-direction: column
+        align-items: stretch
+        justify-content: flex-start
+        padding: 12vh 0
+        .create-company-title
+            background: -webkit-linear-gradient($primary-blue, $primary-green);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: $font-headers
+            text-align: center
+            font-size: 2.4rem
+            font-weight: 600
+        .create-company-form
+            display: flex
+            flex-direction: column
+            align-items: center
+            .form-group
+                width: 48vw
+                textarea
+                    height: 84px
+                .form-control
+                    font-family: $font-primary
+                .form-label, .form-text
+                    padding: .12vmin
+                    font-family: $font-secondary
+                    color: $blue-dark-2                    
+                    font-size: .8rem
+                    font-weight: 600
+                &#share-slider
+                    .form-control-range
+                        background-color: $green-light-1
+            .num-shares
+                display: flex
+                justify-content: space-between
+                width: 78vw
+                font-family: $font-secondary
+                color: $iot-black
+                font-weight: 600
+                font-size: 1.32rem
+            .share-price-card
+                display: flex 
+                flex-direction: row
+                justify-content: center
+                align-items: center
+                margin: 3vmin
+                h3
+                    padding: 6vmin
+                    font-family: $font-primary
+                    color: $iot-black
+                    font-size: 2.4rem
+                    text-align: center
+                    span
+                        font-size: 1.4rem
+                        font-weight: 600
+                        text-decoration: underline
+            .cont-btn
+                font-family: $font-headers
+                font-size: 1.32rem
+
+@media screen and ( max-width: 481px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    margin-bottom: 3.2vh
+                    width: 84vw
+                    &#share-slider
+                        width: 72vw
+                        .form-label
+                            margin-left: -24px
+                        .form-text
+                            text-align: center
+                    .form-control
+                    .form-label
+                .share-price-card
+                    width: 84vw
+                    h3
+                        font-size: 1.6rem
+                    
+                
+@media screen and ( min-width: 481px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+                .num-shares
+                    width: 48vw
+                .share-price-card
+                    h3
+                        font-size: 1.8rem
+@media screen and ( min-width: 768px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+                .num-shares
+                    width: 42vw
+                .share-price-card
+                    .form-group
+                        .form-control
+@media screen and ( min-width: 1024px )
+    .layout
+        .form-container
+            .create-company-title
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+             
+                .share-price-card
+                    width: 48vw
+                    height: 16vw
+                    .form-group
+                        .form-control
+@media screen and ( min-width: 1200px )
+    .layout
+        .form-container
+            .create-company-form
+                .form-group
+                    .form-control
+                    .form-label
+                        1.6rem
+                .share-price-card
+                    h3
+                        span
+                            font-size: 3.2rem

@@ -1,0 +1,113 @@
+.tasks-page
+    @import '_theme.sass'
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    height: 100vh
+    .container
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 2vh 0 12vh 
+        margin-top: 8vh
+        #tasks-title
+            width: 100%
+            margin-top: 4vh
+            font-family: $font-headers
+            font-size: 2.8rem
+            text-align: left
+            text-indent: 12vw
+        section
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 100%
+            padding: 2.4vh
+            .section-title
+                width: 72%
+                margin: 0 2.4 1.2vh
+                font-family: $font-secondary
+                font-size: 2.4rem
+                text-align: right
+            ol
+                display: flex
+                flex-direction: column
+                align-items: center
+                width: 100%
+                .task
+                    display: flex
+                    justify-content: space-between
+                    width: 72%
+                    margin-bottom: 2.4vmin
+                    border-bottom: 1px solid $iot-black
+                    font-family: $font-primary
+                    .task-title
+                        margin-left: 4vw
+                        font-family: $font-primary
+                    .task-due
+                        font-family: $font-primary
+                        font-style: italic
+        .task-button
+            font-family: 
+            max-width: 231px
+            max-height: 72px
+            margin: 2vmin
+
+@media screen and ( max-width: 480px )
+    .tasks-page
+        .container
+            #tasks-title
+                margin-left: 32px
+            section
+                .section-title
+                    font-size: 1.6rem
+                    text-align: right
+                ol
+                    .task
+                        width: 100%
+                        .task-title
+                        .task-due
+                            flex-basis: 40%
+@media screen and ( min-width: 481px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due
+@media screen and ( min-width: 768px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due
+@media screen and ( min-width: 1024px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                            font-size: 1.4rem
+                        .task-due
+                            font-size: 1.2rem
+                            padding-right: 32px
+@media screen and ( min-width: 1200px )
+    .tasks-page
+        .container
+            #tasks-title
+            section
+                .section-title
+                ol
+                    .task
+                        .task-title
+                        .task-due
