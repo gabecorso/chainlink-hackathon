@@ -60,7 +60,6 @@ export default function SignUp() {
                         </Modal.Body>
                     </Modal.Header>
                 </Modal> */}
-            }
             <Container>
                 <h2>Make An Account</h2> 
                 <Formik
@@ -100,7 +99,7 @@ export default function SignUp() {
                             <Form.Text>{errors.email}</Form.Text>
                             < br />
                             <Form.Group>
-                                <Form.Label htmlFor="password" >
+                                <Form.Label htmlFor="password"  onTouchStart={() => setShowToolTip(true)} onTouchEnd={() => setShowToolTip(false)}>
                                     Password &nbsp;
                                     <OverlayTrigger
                                         placement="top"
