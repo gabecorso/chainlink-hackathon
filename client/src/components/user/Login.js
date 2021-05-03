@@ -90,8 +90,8 @@ export default function SignUp() {
                             onChange= { handleChange }
                             value={values.email}
                             />
-                    <Form.Text>{errors.email}</Form.Text>
                     </Form.Group>
+                    <Form.Text>{errors.email}</Form.Text>
                     < br />
                     <Form.Group>
                         <Form.Label htmlFor="password" >Password</Form.Label>
@@ -102,8 +102,8 @@ export default function SignUp() {
                             onChange= { handleChange }
                             value={values.password}
                             />
-                        <Form.Text>{errors.password}</Form.Text>
                     </Form.Group>
+                    <Form.Text>{errors.password}</Form.Text>
                     <br />
                     <div className={'form-footer d-flex justify-content-end mt-3'}>
                         <p className={'mr-4'}>

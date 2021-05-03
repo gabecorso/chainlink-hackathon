@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react'
-import signUp from '../../styles/signup.sass'
-import SignUpSchema from '../../helpers/SignUpSchema'
-import * as yup from 'yup';
-import axios from 'axios'
-import { Container, Modal } from 'react-bootstrap';
+import React, { useState, useEffect,  useRef } from 'react';
+import signUp from '../../styles/signup.sass';
 import { useHistory, Link } from 'react-router-dom';
+import * as yup from 'yup';
+import { Formik } from 'formik';
+import axios from 'axios';
+import { Container, Modal, Form, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuestionCircle } from '@fortawesome/pro-light-svg-icons';
 import Layout from '../common/Layout';
 
 const initialFormValues={
@@ -14,141 +16,132 @@ const initialFormValues={
     passwordConfirmation: '',
 }
 
-const initialErrors={
-    fullName:'',
-    email: '',
-    password: '',
-    passwordConfirmation: '',
-
-}
-
 export default function SignUp() {
-    const [form, setForm] = useState(initialFormValues)
-    const [errors, setErrors] = useState(initialErrors)
-    const [buttonDisabled, setButtonDisabled] = useState(true)
-    const [hasSubmitted, setHasSubmitted] = useState(true)
-
+    const [showTooltip, setShowToolTip] = useState(false);
     const history = useHistory();
 
-    useEffect(() => {
-        SignUpSchema.isValid(form).then(valid => {
-          setButtonDisabled(!valid);
-        });
-    }, [form]);
-
+    const validationSchema = yup.object({
+        fullName: yup
+        .string()
+        .required('Name is required'),
+        email: yup
+        .string()
+        .required('Email is required')
+        .email('Please input a valid email'),
+        password: yup
+        .string()
+        .min(8, 'Password is too short')
+        .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]$/, 'Password must include at least 1 letter, number, and special character.')
+        .required('Password is required'),
+        passwordConfirmation: yup.string()
+        .oneOf([yup.ref('password'), null], 'Passwords must match')
+        .required('please confirm your password')
     
-    const onChange = (e) => {
-        e.persist()
-       const name = e.target.name
-       const value = e.target.value;
+    });
 
-       yup
-       .reach(SignUpSchema, name)
-       .validate(value)
-       .then( valid => {
-           setErrors({
-               ...errors,
-               [name]: ''
-           })
-       })
-       .catch(err => {
-           setErrors({
-               [name]: err.errors[0]
-           })
-       })
-
-        setForm({
-        ...form,
-        [name] : value
-        })
-    }
-  
-    const handleSubmit = (e) =>{
-        console.log()
-        e.preventDefault()
-        const newUser ={
-            firstName: form.fullName.split(' ')[0],
-            lastName: form.fullName.split(' ')[-1],
-            email: form.email.trim(),
-            password: form.password.trim(),
-        }
-        postNewUser(newUser)
-        setForm(initialFormValues)
-    }
-
-  const postNewUser = user => {
-        setHasSubmitted(true)
+    const postNewUser = user => {
         const goLogin = setTimeout(()=> history.push('/login'), 1500);
 
-  }
+    };
+
+    const renderTooltip = (props) => (
+        <Tooltip id="password-tooltip" {...props}>
+            Password must be at least 8 characters, including 1 letter, number, and special character.
+        </Tooltip>
+    )
 
     return (
         <Layout cName='sign-up' displayNav={false}>
-            { hasSubmitted && 
-                <Modal className="success-dialog">
+                {/* MAKE IT WORK ::??:: <Modal className="success-dialog">
                     <Modal.Header closeButton>
                         <Modal.Title>Congrats!</Modal.Title>
                         <Modal.Body>
                             <p>You've signed up, woohoo! now go ahead and log in. We'll send you a confirmation email (eventually). </p>
                         </Modal.Body>
                     </Modal.Header>
-                </Modal>
+                </Modal> */}
             }
             <Container>
                 <h2>Make An Account</h2> 
-                <form className='form' onSubmit={handleSubmit}>
-                    <label htmlFor="fullName" >
-                        Full Name
-                        <input 
-                            name="fullName"
-                            placeholder="Ada Lovelace"
-                            type="text"
-                            onChange= { onChange }
-                            value={form.lastName}
-                            />
-                    </label>
-                    < br />
-                    <label htmlFor="email" >
-                        Email
-                        <input 
-                            name="email"
-                            placeholder="thinking.machine@gmail.com"
-                            type="text"
-                            onChange= { onChange }
-                            value={form.email}
-                            />
-                    </label>
-                    < br />
-                    <label htmlFor="password" >
-                        Password
-                    <input 
-                        name="password"
-                        placeholder="Choose a secret phrase"
-                        type="password"
-                        onChange= { onChange }
-                        value={form.password}
-                    />
-                    </label>
-                    <br />
-                    <label htmlFor="passwordConfirmation" >
-                        Confirm password
-                    <input 
-                        name="passwordConfirmation"
-                        placeholder="Keep it safe!"
-                        type="password"
-                        onChange= { onChange }
-                        value={form.passwordConfirmation}
-                        />
-                    </label>
-                    <br />
-                    <div className={'form-footer d-flex justify-content-end mt-3'}>
-                        <p className={'mr-4'}>
-                            Already have an account?  <br/>
-                            <Link to="/login">Sign in.</Link>
-                        </p>
-                        <button type="submit" disabled={buttonDisabled}>Submit</button>
-                    </div>
-                </form>
+                <Formik
+                    validationSchema={validationSchema}
+                    initialValues={initialFormValues}
+                    onSubmit={( values, actions) => {
+                        this.handleSubmit(values)
+                    }}
+                    render = {
+                        ({
+                            values, errors, touched, dirty, isValid,
+                            isSubmitting, handleChange, handleSubmit
+                        }) => (
+                        <Form className='form' onSubmit={handleSubmit}>
+                            <Form.Group>
+                                <Form.Label htmlFor="fullName" >Full Name</Form.Label>
+                                    <Form.Control
+                                        name="fullName"
+                                        placeholder="Ada Lovelace"
+                                        type="text"
+                                        onChange= { handleChange }
+                                        value={values.lastName}
+                                        />
+                            </Form.Group>
+                            <Form.Text>{errors.fullName}</Form.Text>
+                            < br />
+                            <Form.Group>
+                                <Form.Label htmlFor="email" >Email</Form.Label>
+                                <Form.Control 
+                                    name="email"
+                                    placeholder="thinking.machine@gmail.com"
+                                    type="text"
+                                    onChange= { handleChange }
+                                    value={values.email}
+                                    />
+                            </Form.Group>
+                            <Form.Text>{errors.email}</Form.Text>
+                            < br />
+                            <Form.Group>
+                                <Form.Label htmlFor="password" >
+                                    Password &nbsp;
+                                    <OverlayTrigger
+                                        placement="top"
+                                        delay={{ show: 240, hide: 480 }}
+                                        overlay={renderTooltip}
+                                    >
+                                        <FontAwesomeIcon icon={faQuestionCircle}/>
+                                    </OverlayTrigger>
+                                </Form.Label>
+                                    <Form.Control 
+                                        name="password"
+                                        placeholder="Choose a secret phrase"
+                                        type="password"
+                                        onChange= { handleChange }
+                                        value={values.password}
+                                        />
+                            </Form.Group>
+                            <Form.Text>{ errors.password }</Form.Text>
+                            <br />
+                            <Form.Group>
+                                <Form.Label htmlFor="passwordConfirmation" >Confirm password</Form.Label>
+                                    <Form.Control 
+                                        name="passwordConfirmation"
+                                        placeholder="Keep it safe!"
+                                        type="password"
+                                        onChange= { handleChange }
+                                        value={values.passwordConfirmation}
+                                        />
+                            </Form.Group>
+                            <Form.Text>{errors.passwordConfirmation}</Form.Text>
+                            <br />
+                            <div className={'form-footer d-flex justify-content-end mt-3'}>
+                                <p className={'mr-4'}>
+                                    Already have an account?  <br/>
+                                    <Link to="/login">Sign in.</Link>
+                                </p>
+                                <button type="submit" disabled={!isValid}>Submit</button>
+                            </div>
+                        </Form>
+                    )} 
+                />
             </Container>
         </Layout>
     )
