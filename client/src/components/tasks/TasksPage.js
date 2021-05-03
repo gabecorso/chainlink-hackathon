@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import tasks from '../../styles/tasks.sass'
-import Layout from '../common/Layout'
+import { Helmet } from 'react-helmet'
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
 import { v4 as uuid } from 'uuid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/pro-light-svg-icons'
+import Layout from '../common/Layout'
 
 const seedData = {
     taskSections: [
@@ -32,6 +33,9 @@ export default function Account() {
     const [tasks, setTasks]  = useState(seedData.taskSections)
     return (
         <Layout cName="tasks-page">
+            <Helmet>
+                <title>Tasks | CashDapp</title>
+            </Helmet>
             <Container>
                 <h1 id="tasks-title">Tasks</h1>
                 {

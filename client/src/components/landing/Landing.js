@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import landing from '../../styles/landing.sass';
+import {Helmet} from 'react-helmet'
 
+import landing from '../../styles/landing.sass';
 import Hero from './Hero';
 import Loading from './Loading'
 
@@ -11,6 +12,9 @@ export default function Splash() {
 
     return (
         <> 
+            <Helmet>
+                <title>Welcome to CashDapp</title>
+            </Helmet>
             <Loading isLoading={isLoading}/>
             <Hero isLoading={isLoading} />
         </>

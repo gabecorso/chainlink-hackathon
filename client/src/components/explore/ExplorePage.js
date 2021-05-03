@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import explore from '../../styles/explore.sass'
-import Layout from '../common/Layout'
+import { Helmet } from 'react-helmet'
 import { Container } from 'react-bootstrap'
 import SearchBar from './SearchBar'
+import Layout from '../common/Layout'
 import FeaturedCarousel from './ExploreCompanyCategory'
 import ExploreCompanyCategory from './ExploreCompanyCategory'
-
 const seedData = {
     companyCategories: [
     {
@@ -71,6 +71,9 @@ export default function ExplorePage() {
     const [ companies, setCompanies ] = useState(seedData)
     return (
     <Layout mobileFooter={true}>
+        <Helmet>
+            <title>Explore on CashDapp</title>
+        </Helmet>
         <Container className="explore-page">
             <SearchBar />
             <section className= {"categories mt-3"}>

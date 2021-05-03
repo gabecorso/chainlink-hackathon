@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import dashboard from '../../styles/dashboard.sass'
+import { Helmet } from 'react-helmet'
+import { Container, Tabs, Tab, Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/pro-light-svg-icons'
+
 import CollectiblesTab from './CollectiblesTab'
 import TokensTab from './TokensTab'
 import JDenticon from '../common/JDenticon'
 import Layout from '../common/Layout'
-import { Container, Tabs, Tab, Button } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/pro-light-svg-icons'
 
 const seedData = {
     user: {
@@ -56,6 +58,9 @@ export default function Dashboard() {
 
     return (
         <Layout cName ="dashboard">
+            <Helmet>
+                <title>{dashState.user.firstName}'s Dashboard | CashDapp</title>
+            </Helmet>
             <section className={"mt-5 dash-overview"}>
                 <JDenticon className={"m- acct-photo"} size={85} value={'213taa679dfsafbnhdusiao'}/>
                 <h1 className={"user-name"}>{dashState.user.firstName}'s Account</h1>

@@ -1,5 +1,6 @@
 import React, {Fragment} from 'react';
 import companyProfile from '../../styles/companyProfile.sass';
+import { Helmet } from 'react-helmet';
 import {Container, Row, Col, Tabs, Tab} from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
@@ -8,11 +9,13 @@ import Layout from "../common/Layout";
 import DocumentsTab from "./DocumentsTab";
 import AccountsTab from "./CreditTab";
 
-
 export default function CompanyProfile({company={name: 'Charles\' PT', desc: 'Ex-NFL Linebacker providing bespoke personal training services', etherScan: 'https://etherscan.io/chart/etherprice'}}) {
     const {name, desc, etherScan} = company;
     return (
         <Layout >
+            <Helmet>
+                <title>Manage {company.name}</title>
+            </Helmet>
             <Container className={'mt-8 mb-8 company-page'}>
                 <section className={'d-flex mt-2 profile-header align-items center' }>
                     <JDenticon className={'d-flex align-items-center mr-3'} size={100} value={'213taa679dfsafbnhdusiao'} />

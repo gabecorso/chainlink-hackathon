@@ -1,5 +1,6 @@
 import React, { useState, useEffect,  useRef } from 'react';
 import signUp from '../../styles/signup.sass';
+import { Helmet } from 'react-helmet';
 import { useHistory, Link } from 'react-router-dom';
 import * as yup from 'yup';
 import { Formik } from 'formik';
@@ -15,7 +16,6 @@ const initialFormValues={
     password: '',
     passwordConfirmation: '',
 }
-
 export default function SignUp() {
     const [showTooltip, setShowToolTip] = useState(false);
     const history = useHistory();
@@ -49,9 +49,11 @@ export default function SignUp() {
             Password must be at least 8 characters, including 1 letter, number, and special character.
         </Tooltip>
     )
-
     return (
         <Layout cName='sign-up' displayNav={false}>
+            <Helmet>
+                <title>Sign up | CashDapp</title>
+            </Helmet>
                 {/* MAKE IT WORK ::??:: <Modal className="success-dialog">
                     <Modal.Header closeButton>
                         <Modal.Title>Congrats!</Modal.Title>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import signUp from '../../styles/signup.sass'
+import { Helmet } from 'react-helmet'
 import { useHistory, Link } from 'react-router-dom'
 import * as yup from 'yup';
 import { Formik } from 'formik';
@@ -24,7 +25,7 @@ const validationSchema = yup.object({
         .required('Password is required'),
 })
 
-export default function SignUp() {
+export default function Login() {
 
     const [form, setForm] = useState(initialFormValues)
     const [buttonDisabled, setButtonDisabled] = useState(true)
@@ -66,6 +67,9 @@ export default function SignUp() {
 
     return (
     <Layout cName="log-in" displayNav={false}>  
+        <Helmet>
+            <title>Log in | CashDapp</title>
+        </Helmet>
         <Container>
             <h2>Log In</h2> 
             <Formik

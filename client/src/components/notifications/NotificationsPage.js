@@ -1,5 +1,6 @@
 import React, { useState }from 'react'
 import notifications from '../../styles/notifications.sass'
+import { Helmet } from 'react-helmet'
 import Layout from '../common/Layout'
 import Container from 'react-bootstrap/Container'
 import NotificationCard from './NotificationCard'
@@ -42,6 +43,9 @@ export default function NotificationsPage() {
     const [notifications, setNotifications ] = useState(seedData.notifications)
     return (
         <Layout cName="notifications-page">
+            <Helmet>
+                <title>Notifications | CashDapp</title>
+            </Helmet>
             <Container className="notif-container">
                 <h1 id="notif-title">Notifications</h1>
                 <ol className={"mt-3 notif-list"}>
