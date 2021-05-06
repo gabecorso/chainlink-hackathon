@@ -31,7 +31,10 @@ export default function SignUp() {
         password: yup
         .string()
         .min(8, 'Password is too short')
-        .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]$/, 'Password must include at least 1 letter, number, and special character.')
+        .matches(/^(?=.*[A-Z]).{8,}$/, 'Include at least 1 uppercase letter.')
+        .matches(/^(?=.*[a-z]).{8,}$/, 'Include at least 1 lowercase letter.')
+        .matches(/^(?=.*[0-9]).{8,}$/, 'Include at least 1 number.')
+        .matches(/^(?=.*[!@#$%&* ]).{8,}$/, 'Use some special characters too, for good measure')
         .required('Password is required'),
         passwordConfirmation: yup.string()
         .oneOf([yup.ref('password'), null], 'Passwords must match')
@@ -40,7 +43,7 @@ export default function SignUp() {
     });
 
     const postNewUser = user => {
-        const goLogin = setTimeout(()=> history.push('/login'), 1500);
+        const goLogin = setTimeout(()=> history.push('/login'), 450);
 
     };
 
@@ -136,9 +139,9 @@ export default function SignUp() {
                             <div className={'form-footer d-flex justify-content-end mt-3'}>
                                 <p className={'mr-4'}>
                                     Already have an account?  <br/>
-                                    <Link to="/login">Sign in.</Link>
+                                    <Link to="/login">Log in.</Link>
                                 </p>
-                                <button type="submit" disabled={!isValid}>Submit</button>
+                                <button type="submit" onClick={() => isValid && postNewUser(values)} disabled={!(dirty && isValid)}>Submit</button>
                             </div>
                         </Form>
                     )} 

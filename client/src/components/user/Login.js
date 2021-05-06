@@ -21,47 +21,18 @@ const validationSchema = yup.object({
     password: yup
         .string()
         .min(8, 'Password is too short')
-        .matches(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, 'Password must contain at least 8 characters, including 1 letter, 1 number, and 1 special character.')
+        .matches(/^(?=.*[A-Z]).{8,}$/, 'Include at least 1 uppercase letter.')
+        .matches(/^(?=.*[a-z]).{8,}$/, 'Include at least 1 lowercase letter.')
+        .matches(/^(?=.*[0-9]).{8,}$/, 'Include at least 1 number.')
+        .matches(/^(?=.*[!@#$%&* ]).{8,}$/, 'Use some special characters too, for good measure')
         .required('Password is required'),
 })
 
 export default function Login() {
-
-    const [form, setForm] = useState(initialFormValues)
-    const [buttonDisabled, setButtonDisabled] = useState(true)
-    const [hasSubmitted, setHasSubmitted] = useState(false)
-
     const history = useHistory();
-    
-    // const onChange = (e) => {
-    //     e.persist()
-    //    const name = e.target.name
-    //    const value = e.target.value;
 
-    //    yup
-    //    .reach(LoginSchema, name)
-    //    .validate(value)
-    //    .then(valid => {
-    //        setErrors({
-    //            ...errors,
-    //            [name]: ''
-    //        })
-    //    })
-    //    .catch(err => {
-    //        hasSubmitted && setErrors({
-    //            [name]: err.errors[0]
-    //        })
-    //    })
-
-    //     setForm({
-    //     ...form,
-    //     [name] : value
-    //     })
-    // }
-
-  const postNewUser = user => {
-        setHasSubmitted(true);
-        // history.push('/dashboard');
+    const postNewUser = user => {
+        const goToDash = setTimeout(() =>  history.push('/dashboard'), 400)
 
   }
 
@@ -114,7 +85,7 @@ export default function Login() {
                             Or if you need,  <br/>
                             <Link to="/sign-up">make an account.</Link>
                         </p>
-                        <button type="submit" disabled={!isValid}>Submit</button>
+                        <button type="submit" onClick={() => isValid && postNewUser(values)} disabled={!(isValid && dirty)}>Submit</button>
                     </div>
                 </Form>
             )}/>
